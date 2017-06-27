@@ -1,0 +1,242 @@
+/*BELT EXAM*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+img {
+    width: 100%;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+#wrapper {
+    width: 970px;
+    background-color: #072134;
+    padding: 10px;
+}
+
+
+/*==================== HEADER ====================*/
+
+header {
+    display: inline-flex;
+    padding: 20px;
+}
+
+h1 {
+    color: white;
+    font-size: 26px;
+    font-style: normal;
+}
+
+h1 span {
+    color: lightblue;
+}
+
+nav {
+    width: 535px;
+    margin-left: 120px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+nav p a {
+    width: 70px;
+    margin-top: 10px;
+    color: white;
+}
+
+nav p a:focus {
+    color: #2868A8;
+}
+
+
+/*==================== MAIN: SERVICES ====================*/
+
+main {
+    background-color: white;
+    padding: 20px;
+    border-bottom: 1px solid #072134;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: top;
+    padding-top: 20px;
+    margin: 0px;
+}
+
+.columnContainer {
+    background-color: #2868A8;
+    width: 297px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.work {
+    height: 230px;
+    display: inline-flex;
+    flex-flow: row wrap;
+}
+
+.columnWrap {
+    display: flex;
+    flex-flow: column;
+}
+
+h3 {
+    width: 200px;
+    height: 20px;
+    display: inline-block;
+    padding-top: 20px;
+    font-size: 22px;
+    color: white;
+}
+
+.columnText {
+    width: 250px;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    font-size: 11px;
+    color: white;
+}
+
+.icons {
+    padding: 5px;
+}
+
+.iconSmall {
+    width: 38px;
+    height: 38px;
+    padding: 15px 5px 5px 10px;
+}
+
+.iconMedium {
+    width: 39px;
+    height: 39px;
+    padding: 15px 5px 5px 10px;
+}
+
+.iconLarge {
+    width: 40px;
+    height: 40px;
+    padding: 15px 5px 5px 10px;
+}
+
+button {
+    background: linear-gradient(#55B3ED 50%, #3993DD 49%);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px 40px 10px 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    display: block;
+    margin: 20px;
+    /*vertical-align: bottom??  set a height for column container?*/
+}
+
+
+/*==================== MAIN: SERVICES ====================*/
+
+
+/*==================== WORLD-TESTIMONIAL====================*/
+
+h4.columnContainer {
+    width: 600px;
+    font-size: 24px;
+    font-weight: lighter;
+    color: #072134;
+    background-color: white;
+}
+
+p.columnContainer {
+    font-size: 24px;
+    font-weight: lighter;
+    color: #072134;
+    background-color: white;
+}
+
+.worldContainer {
+    background-color: white;
+    width: 297px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.worldText {
+    display: inline-block;
+    font-size: 11px;
+    color: #072134;
+    background-color: white;
+}
+
+p.worldText {
+    padding-bottom: 10px;
+}
+
+p.worldText a {
+    font-size: 16px;
+    color: #3993DD;
+}
+
+.speechbubble {
+    height: 60px;
+    position: relative;
+    padding: 20px;
+    margin: 0px 0px 30px 0px;
+    font-size: 14px;
+    font-style: italic;
+    color: black;
+    background: #DAEDFF;
+    display: inline-block;
+}
+
+.speechbubble:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    /* value = - border-top-width - border-bottom-width */
+    left: 50px;
+    /* controls horizontal position */
+    border-width: 15px 15px 0;
+    /* vary these values to change the angle of the vertex */
+    border-style: solid;
+    border-color: #DAEDFF transparent;
+    /* reduce the damage in FF3.0 */
+    display: block;
+    width: 0;
+}
+
+footer {
+    width: 970px;
+    background-color: white;
+    text-align: center;
+    padding: 15px 0px 15px 0px;
+    font-size: 10px;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+}
+
+footer p a {
+    font-size: 12px;
+    margin: 0px 15px 0px 15px;
+    color: #3993DD;
+}
+
+footer p a:focus {
+    color: lightblue;
+    ;
+}
