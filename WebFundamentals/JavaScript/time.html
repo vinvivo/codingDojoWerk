@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vinney's practice assignment for JavaScript">
+    <title>If you don't mind, can I has the time?</title>
+    <script>
+        var HOUR = 7;
+        var MINUTE = 15;
+        var PERIOD = "PM";
+
+        if (MINUTE === 0 && PERIOD === "AM") {
+            console.log("It is " + HOUR + " in the morning.");
+        } else if (MINUTE === 0 && PERIOD === "PM") {
+            console.log("It is " + HOUR + " in the evening.");
+        } else if (MINUTE > 0 && MINUTE < 30 && PERIOD === "AM") {
+            var adjHOUR = "just after ";
+            console.log("It is " + adjHOUR + HOUR + " in the morning.");
+        } else if (MINUTE > 0 && MINUTE < 30 && PERIOD === "PM") {
+            var adjHOUR = "just after ";
+            console.log("It is " + adjHOUR + HOUR + " in the evening.");
+        } else if (MINUTE === 30 && PERIOD === "AM") {
+            var adjHOUR = "half past ";
+            console.log("It is " + adjHOUR + HOUR + " in the morning.");
+        } else if (MINUTE === 30 && PERIOD === "PM") {
+            var adjHOUR = "half past ";
+            console.log("It is " + adjHOUR + HOUR + " in the evening.");
+        } else if (MINUTE > 30 && MINUTE < 60 && PERIOD === "AM") {
+            var nearestHOUR = HOUR + 1;
+            var adjHOUR = "almost ";
+            console.log("It is " + adjHOUR + nearestHOUR + " in the morning.");
+        } else if (MINUTE > 30 && MINUTE < 60 && PERIOD === "PM") {
+            var nearestHOUR = HOUR + 1;
+            var adjHOUR = "almost ";
+            console.log("It is " + adjHOUR + nearestHOUR + " in the evening.");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vinney's practice assignment 'While You Wait' for JavaScript">
+    <title>While You Wait</title>
+    <script>
+        var daysUntilMyBirthday = 60;
+
+        function countdown() {
+            for (var i = daysUntilMyBirthday; i >= 0; i--) {
+                if (i >= 30 && i <= 60) {
+                    console.log(i + " days until my birthday. Such a long time... :(");
+                    daysUntilMyBirthday--;
+                } else if (daysUntilMyBirthday >= 5 && daysUntilMyBirthday < 30) {
+                    console.log(daysUntilMyBirthday + " days until my birthday. I honestly can't wait!");
+                    daysUntilMyBirthday--;
+                } else if (daysUntilMyBirthday > 1 && daysUntilMyBirthday < 5) {
+                    console.log(daysUntilMyBirthday + " DAYS UNTIL MY BIRTHDAY!!!");
+                    daysUntilMyBirthday--;
+                } else if (daysUntilMyBirthday > 0 && daysUntilMyBirthday <= 1) {
+                    console.log(daysUntilMyBirthday + " DAY UNTIL MY BIRTHDAY!!!");
+                    daysUntilMyBirthday--;
+                } else if (daysUntilMyBirthday === 0) {
+                    console.log("IT'S MY BIRTHDAY!!  P A R T Y  T I M E ! ! ! !");
+                } else {
+                    break;
+                }
+            }
+        }
+
+        countdown(daysUntilMyBirthday);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
