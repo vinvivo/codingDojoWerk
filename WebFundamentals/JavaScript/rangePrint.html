@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vinney's practice assignment 'Range Print' for JavaScript">
+    <title>Range Print</title>
+    <script>
+        function printRange(startPoint, endPoint, skipAmount) {
+            for (i = startPoint; i < endPoint; i += skipAmount) {
+                if (skipAmount === undefined) {
+                    skipAmount = 1;
+                }
+                console.log(i);
+            }
+        }
+        printRange(-1, 5, 1);
+        printRange(1, 4);
+    </script>
+</head>
+
+<body>
+    <h1>Range Print</h1>
+    <p>Create a function that can take a start point, end point, and skip amount, to print all numbers in a range (exclusive of final end point number).</p>
+    <p>Bonus:</p>
+    <ul>
+        <li>Make sure it works for negative numbers</li>
+        <li>If the user doesn't pass a skipAmount, make it default to 1</li>
+        <li>If the user doesn't pass an endPoint, make it start at 0 and end at the first</li>
+    </ul>
+    <p><i>Open the console in your browser/ interpreter to view the answer.</i></p>
+</body>
+
+</html>
