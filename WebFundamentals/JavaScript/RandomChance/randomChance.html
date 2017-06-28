@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random Chance</title>
+    <meta name="description" content="Vinney's practice assignment for 'Random Chance' in JavaScript">
+    <!--    <link rel="stylesheet" type="text/css" href="style.css">    -->
+    <script>
+        /* <script src = "main.js"> */
+        "use strict";
+        /*
+        This function, "bigMoneyBigMoney", takes an integer input, "quarters", and loops for that number of times. 
+        The function sets a random, static number as "winningNumber", and sets a "winnings" variable to keep track
+        of the user's total 'pot' of money before it starts to loop.
+        
+        On each loop, the function:
+            -   Decrements the input value, "quarters", by 1.
+            -   Generates a random number, "yourNumber", and compares it to winningNumber.
+            -   If yourNumber does not equal winningNumber, the loop continues until the value of quarters reaches 0.
+            -   If yourNumber === winningNumber, the user gets a "reward" of a random value between 50–100 
+                determined by "reward", and continues to loop until the value of quarters reaches 0.
+            -   When the user has run out of quarters (i.e., quarters === 0), the function returns 0.
+        */
+        function bigMoneyBigMoney(quarters) {
+            var winningNumber = Math.floor(Math.random() * (100 - 1)) + 1; //sets winningNumber to a static integer between 1 (inclusive) and 100 (exclusive), (i.e., 100 total possibilities)
+            var winnings = 0; //sets the 'money pot'
+
+            while (quarters >= 0) {
+                var yourNumber = Math.floor(Math.random() * (100 - 1)) + 1; //generates a random number between 1 (inclusive) and 100 (exclusive) on each loop, so that the probability of getting the winningNumber is 1:100
+                var reward = Math.floor(Math.random() * (100 - 50 + 1)) + 50; //generates a random number between 50 (inclusive) and 100 (inclusive--hence the Math...(max - min + 1) + min) on each loop to offer as a reward
+                if (quarters > 0 && yourNumber != winningNumber) {
+                    quarters--;
+                    console.log("Sorry, the winning number is: " + winningNumber);
+                    console.log("Your number is: " + yourNumber);
+                    console.log("You have " + quarters + " games left");
+                    continue;
+                } else if (yourNumber === winningNumber) {
+                    quarters--;
+                    winnings = (winnings + reward + quarters); //adds winnings to money pot
+                    console.log("The winning number is: " + winningNumber);
+                    console.log("Your number is: " + yourNumber);
+                    console.log("You won: " + reward + " quarters!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                    console.log("Your winnings total: " + winnings + " quarters.");
+                    console.log("You have " + quarters + " games left");
+                } else if (quarters === 0) {
+                    console.log("Game Over :(  Your winnings total: " + winnings + " quarters!");
+                    return 0;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Random Chance</h1>
+    <p>Let's play the slots!</p>
+    <p>Make a function that takes a number of quarters (1 quarter = 1 game).</p>
+    <p>There is a 1 in 100 chance to win the slot machine (which will give you between 50 - 100 quarters -- use Math.random and Math.floor to pick a random number of coins).</p>
+    <p>While the user still has quarters, use Math.random to determine if they won.</p>
+    <p>If they ever win, return the number of quarters (ex: they had 50 remaining quarters and won 90, so it should return 140).</p>
+    <p>Return 0 if all the quarters were wasted.</p>
+    <h2>To play:</h2>
+    <p>Open the JavaScript console in your browser/interpreter and enter: <b>bigMoneybigMoney(***);</b></p>
+    <p>where *** is the number of quarters you want to play.</p>
+    <!--<p>Bonus (Only If You Have Time):</p>
+    <ul>
+        <li>Let the user pass the number they are willing to leave with</li>
+        <li>(ex: If they won the lottery and still have 40 coins, they will keep playing until they have collected 200 coins)</li>
+    </ul>-->
+</body>
+
+</html>

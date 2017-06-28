@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vinney's practice assignment 'Fancy Array' for JavaScript">
+    <title>Fancy Array</title>
+    <script>
+        // fancyArray is a function that takes four array arguments and logs them to the console on individually numbered lines.
+        function fancyArray(input) {
+            for (var i = 0; i < input.length; i++) { // loops through each array value.
+                console.log(i + " -> " + input[i]);
+            }
+        }
+        fancyArray(["Christian", "Ciara", "Damian", "Marina"]);
+    </script>
+</head>
+
+<body>
+    <h1>Fancy Array</h1>
+    <p>Normally, if you print an array such as ["James", "Jill", "Jane", "Jack"], you will see the following:</p>
+    <p>[ "Christian", "Ciara", "Damian", "Marian" ]</p>
+    <p>Let's make it look fancy! Write a function that will make it print like:</p>
+    <p>0 -> Christian</p>
+    <p>1 -> Ciara</p>
+    <p>2 -> Damian</p>
+    <p>3 -> Marian</p>
+    <!--<p></p>
+    </p>
+    <p>Bonus (Only If You Have Time):</p>
+    <ul>
+        <li>the user pass in the symbol that will print (ex: "->", "=>", "::", "-----")</li>
+        <li>Have an extra parameter reversed. If the user passes true, print the elements in reverse order</li>
+    </ul>
+-->
+</body>
+
+</html>
+<!-->
+Debug notes: I initially had in my for loop (...; i
+< fancyArray.length). Changed to i < input.length. Then I changed the inputs to an array "["names ","names "]" </!-->
