@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Students and Instructors</title>
+    <meta name="description" content="Vinney's practice assignment for 'Students and Instructors' in JavaScript">
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <script>    // <script src = "main.js">
+        "use strict";
+
+        var students = [
+            {first_name:  'Michael', last_name : 'Jordan'},
+            {first_name : 'John', last_name : 'Rosales'},
+            {first_name : 'Mark', last_name : 'Guillen'},
+            {first_name : 'KB', last_name : 'Tonel'}
+        ]
+
+        function fullName() {
+            for (var i = 0; i < students.length; i++) {
+            console.log(students[i].first_name + " " + students[i].last_name);
+            }
+        }
+        fullName();
+    </script>
+</head>
+
+<body>
+    <h1>Students and Instructors</h1>
+    <h2>Part I</h2>
+    <p>Given the following array of objects:</p>
+    <p>var students = [</P>
+    <p>     {first_name:  'Michael', last_name : 'Jordan'},</p>
+    <p>     {first_name : 'John', last_name : 'Rosales'},</p>
+    <p>     {first_name : 'Mark', last_name : 'Guillen'},</p>
+    <p>     {first_name : 'KB', last_name : 'Tonel'}</p>
+    <p>]</p>
+
+    <p>Create a program that outputs:</p>
+    <p>Michael Jordan</p>
+    <p>John Rosales</p>
+    <p>Mark Guillen</p>
+    <p>KB Tonel</p>
+    <!--<h2>Part II (Optional)</h2>
+    <p></p>
+    <p>Now, given the following dictionary:</p>
+    <p></p>
+    <p>var users = {</p>
+    <p>'Students': [ </p>
+    <p>    {first_name:  'Michael', last_name : 'Jordan'},</p>
+    <p>    {first_name : 'John', last_name : 'Rosales'},</p>
+    <p>    {first_name : 'Mark', last_name : 'Guillen'},</p>
+    <p>    {first_name : 'KB', last_name : 'Tonel'}</p>
+    <p>],</p>
+    <p>'Instructors': [</p>
+    <p>    {first_name : 'Michael', last_name : 'Choi'},</p>
+    <p>    {first_name : 'Martin', last_name : 'Puryear'}</p>
+    <p>]</p>
+    <p>}</p>
+    <p>Create a program that prints  the following format (including the number of characters in each combined name):</p>
+    <p></p>
+    <p>Students</p>
+    <p>1 - MICHAEL JORDAN - 13</p>
+    <p>2 - JOHN ROSALES - 11</p>
+    <p>3 - MARK GUILLEN - 11</p>
+    <p>4 - KB TONEL - 7</p>
+    <p>Instructors</p>
+    <p>1 - MICHAEL CHOI - 11</p>
+    <p>2 - MARTIN PURYEAR - 13</p>-->
+
+</body>
+
+</html>
