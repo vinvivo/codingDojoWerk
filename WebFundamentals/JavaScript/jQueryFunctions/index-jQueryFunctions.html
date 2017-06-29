@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="description" content="Description for this webpage">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+<h1>Assignment: jQuery Functions</h1>
+<p>Create a web page that uses the following jQuery functions:</p>
+<p>Don't randomly start writing jQuery and find elements to attach jQuery code to. Think about what each function could be useful for! This is an assignment that previous students have often reverted back to so as to brush up on their jQuery in later weeks! Use the mockup as motivation, but feel free to embellish!</p>
+<p>Do not spend more than 4-8 hours on this assignment.</p>
+<p><strong>Important:</strong> Sometimes students spend too much time going through the documentation that it prevents them from actually building things. Skim through the documentation quickly and casually play around to get familiar with only the following jQuery methods. Once you have spent 4-5 hours on this assignment, move on as you'll get to learn more about how you can use these jQuery methods to build some amazing things later on.  The wireframe on the right shows only 3 functions being tested.  In this assignment, we want you to add more and test all 18 jQuery functions shown below. </p>
+<ul>
+    <li>
+        <h2>.addClass</h2>
+        <p>SYNTAX: <span> $("target").addClass("className[ className className]")</span></p>
+        <p>This method adds the specified class(es) to each element in the set of matched target elements. <a href="http://api.jquery.com/addClass/"></a></p>
+        <p id="overachieve">Click the button to add the class 'highlight' to this line.</p>
+        <button id="addClass">.addClass</button>
+    </li>
+    <li><h2 class="skyRocketsInFlight">.after</h2>
+        <p>SYNTAX: <span> $("target").after(content[, content])</span></p>
+        <p>This method inserts content, specified by the above parameter <span>content</span>, after the target element tags (i.e., after the target element's closing tags). (Different from <span>.append</span> below.) <a href="http://api.jquery.com/after/"></a></p>
+        <p>Click the button to insert text after this section's h2 header to complete the title.</p>
+        <button id="after">.after</button>
+    </li>
+    <li><h2 id="appendix">.append</h2>
+        <p>SYNTAX: <span> $("target").append(content[, content])</span></p>
+        <p>This method inserts content, specified by the above parameter <span>content</span>, as the last child of the target element (i.e., within the target element tags right before the closing tags). (Different from <span>.after</span> above.) <a href="http://api.jquery.com/append/"></a></p>
+        <p>Click the button to append text at the end (but still within) this section's h2 header to create a medical emergency.</p>
+        <button id="append">.append</button>
+    </li>
+    <li><h2>.attr</h2>
+        <p>SYNTAX: <span> $("target").attr("attribute")</span></p>
+        <p>This method <u>gets</u> the value of an <span>attribute</span> for the <i>first</i> element in a set of matched target elements, or <u>sets</u> one or more attributes for every matched elements.<a href="http://api.jquery.com/attr/"></a></p>
+        <p>Click the button to display the <span>src</span> attribute of the jQuery logo. <span id="checkSource"></span></p>
+        <img id="jQueryLogo" src='jQuery-logo2.png' alt="jQuery logo">
+        <button id="attr" class="attr1">.attr</button>
+    </li>
+    <!--<li><h2>.before</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.before</button>
+    </li>
+    <li><h2>.click</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.click</button>
+    </li>
+    <li><h2>.data</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.data</button>
+    </li>
+    <li><h2>.fadeIn</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.fadeIn</button>
+    </li>
+    <li><h2>.fadeOut</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.fadeOut</button>
+    </li>
+    <li><h2>.hide</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.hide</button>
+    </li>
+    <li><h2>.html</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.html</button>
+    </li>
+    <li><h2>.show</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.show</button>
+    </li>
+    <li><h2>.slideDown</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.slideDown</button>
+    </li>
+    <li>
+        <h2>.slideToggle</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.slideToggle</button>
+    </li>
+    <li><h2>.slideUp</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.slideUp</button>
+    </li>
+    <li><h2>.text</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.text</button>
+    </li>
+    <li><h2>.toggle</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.toggle</button>
+    </li>
+    <li><h2>.val</h2>
+        <p>SYNTAX: <span></span></p>
+        <p><a href="http://api.jquery.com/000000000000/"></a></p>
+        <button id="">.val</button>
+    </li>-->
+</ul>
+</body>
+
+</html>
+
+<!-- 
+    NOTES FOR LATER:
+    Consider adding whether a method is a getter, setter, or 
+ -->
