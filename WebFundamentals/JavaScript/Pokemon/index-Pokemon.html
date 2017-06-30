@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Pokemon</title>
+        <meta name="description" content="Vinney's practice assignment 'Pokemon' for learning JavaScript, jQuery, AJAX, and APIs">
+        <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: navy;
+                background-color: pink;
+            }
+
+            body {
+                width: 800px;
+                margin: 5% auto;
+            }
+
+            h1 {
+                margin-top: 2%;
+                margin-bottom: 1%;
+                color: fuchsia;
+            }
+
+            p {
+                padding-bottom: 1em;
+            }
+
+            div {
+                width: 100%;
+                display: flex;
+                flex-flow: wrap;
+                justify-content: space-around;
+            }
+
+            img {
+                flex-flow: wrap;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            "use strict";
+
+            $(document).ready(function () {
+                //changes image src attribute on click of image
+                for (var i = 1; i < 152; i++) {
+                    $('div').append("<img src='http://pokeapi.co/media/img/" + i + ".png'>");
+                    // console.log("<img src='http://pokeapi.co/media/img/" + i + ".png'>");    //For debugging
+                }
+            });
+        </script>
+    </head>
+
+    <body>
+        <h1>Assignment: Pokemon</h1>
+        <p>Create a website that has all the pictures of the original Pokemon (Pokemon #1 ~ Pokemon #151). Use the PokeAPI to get the images. You can find the image of the first Pokemon on http://pokeapi.co/media/img/1.png, second Pokemon on http://pokeapi.co/media/img/2.png, third Pokemon on http://pokeapi.co/media/img/3.png, and so on. (Copy and paste those URLs. Hotlinking has been prohibited by pokeapi.)</p>
+        <p>You can list out 151 images or you can use a for loop (use a for loop).</p>
+
+        <div></div> <!--Pokemon images will be inserted here-->
+    </body>
+
+</html>
