@@ -1,0 +1,139 @@
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src=""></script>
+        <script>
+// <!-- SYNTAX .on() -->
+            $(document).ready(function(){
+                $('button').click(function(){
+                    $('div').append('<h3>I am a dynamically generated h3 </h3>');
+                });
+                $(document).on('click', 'h3', function(){
+                alert('You clicked me!');
+                });
+            });
+
+// /*--SYNTAX: Callbacks--*/
+        // <script>
+            $(document).ready( function() {
+                $('h3').click( function() {
+                    alert('You clicked an H3!');
+                });
+                $('button').click( function() {
+                    $('div').append('<h3>I am a dynamically generated H3</h3>');
+                    $('h3').click( function() {
+                        alert('You clicked an H3!');   // **** here it is!
+                    });
+                });
+            });
+//        <   script>
+//        <!--<body>-->
+//            <div>
+//                <button>Click me to add a new H3 tag!</button>
+//                <h3>Click me to see a message!</h3>
+//            </div>
+//        <!--</body>-->
+
+// SUBMIT LISTENER: upon clicking a submit button in a form, an alert will pop up
+        $('form').submit(function(){alert('you submitted me!');});
+
+// SUBMIT ACTION: clicking a h4 header submits all forms
+        $('h4').click(function(){
+            $('form').submit();
+        })
+
+// RETURN FALSE: syntax for including a 'validator' to prevent a form submission if info is missing or something like that. **put this within the function part of the listener:
+        $('form').submit(function(){
+            return false;
+        });
+
+        //would look like:
+        $('form').submit(function() {
+            $('form').submit(function(){
+                return false;
+            });
+        });
+
+
+//-- .SERIALIZE() -- 
+//        <script>
+        // return false doesn't allow the page to refresh
+        // .submit works in two ways 1) listener  2) used to hard submit
+        // .serialize preps forms being handled by a computer
+            $(document).ready(fucntion(){
+                $("#form1").submit(function() {
+                    console.log($(this).serialize());   /* displays: first_name=Vinney&last_name=Le&email=emailaddress -- which is more meaningful for the form interpreter*/
+                    return false
+                });
+
+                $("btn").click(function() {
+                    $("#form1").submit();
+                })
+            });
+//        <  script>
+
+//        <body>
+//            <form id='form1' action='process.php' methods='post'>
+//                First name <input type='text' name='first_name'>
+//                Last name <input type='text' name='last_name'>
+//                Email <input type='text' name='last_name'>
+//                <input type='submit' value='submit!'>
+//            </form>
+
+//            <button class='btn'>Click me to use .submit() differently!</button>
+
+//        <  body>
+
+
+//--TRAVERSING
+//      refers to this HTML:
+//        <div id='myDiv'>
+//            <p>Here is a paragraph.  It is a beautiful paragraph.</p>
+//            <h3>Michael Choi</h3>
+//            <h3>John Supsupin</h3>
+//            <h3>Trey Villafane</h3>
+//        </div>
+
+        //--.CHILDREN()
+        $('#myDiv').children().css('background-color', 'green');    //this sets green background for all children of #myDiv. **Note the blank parameter in children()
+
+        $('#myDiv').children('h3').css('background-color', 'green'); //this sets green background for only h3 that are children of #myDiv. **Note the h3 parameter in children()
+
+        //--.PARENT()
+        $('h3, p').click(function(){                                //this will add an h2 tag inside the div because the parent element of all h3 & p tags is the div
+            $(this).parent().append('<h2>HOWDY CODING DOJO!</h2>');
+        })
+
+        //--.SIBLINGS()
+        $('h3, p').click(function(){                                //this will hide all p & h3 tags after clicking an h3 or p tag
+            $(this).siblings().hide();
+        })
+
+        //--CHAINING TRAVERSE METHODS:
+            // <div>
+            //     <button>Click me for crazy things!</button>
+            //     <ul>
+            //         <li><h3>Tiger Woods</h3></li>
+            //         <li><h3>Phil Mickelson</h3></li>
+            //         <li><h3>Ben Hogan</h3></li>
+            //         <li><h3>Jack Nicklaus</h3></li>
+            //         <li><h3>Gary Player</h3></li>
+            //         <li><h3>Rory Mcilroy</h3></li>
+            //     </ul>
+            // </div>
+        $('button').click(function(){       // this targets the h3 tags and replaces the text there
+            $(this).siblings().children().children().text('Michael Choi was here!')
+        })
+
+
+
+    </script>
+    </head>
+    <body>
+
+    </body>
+</html>
+
