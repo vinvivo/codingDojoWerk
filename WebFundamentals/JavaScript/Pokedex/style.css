@@ -1,0 +1,180 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    height: 1.5em;
+    margin: 1px;
+    border: 1px solid white;
+    border-radius: 15%;
+}
+
+body {
+    width: 1000px;
+    margin: 5% auto;
+    color: navy;
+    background-color: white;
+}
+
+h1 {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    color: lightcoral;
+}
+
+h2, h3, h4 {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+p {
+    padding-bottom: 1em;
+}
+
+div {
+    display: inline-block;
+}
+
+#pokemon {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+    justify-content: space-between;
+    /*background-color: white;*/
+}
+
+#pokedex {
+    width: 17%;
+    position: fixed;
+    top: 120px;
+    right : 0px;
+    text-align: center;
+    justify-content: center;
+    padding: 2%;
+    /*margin-left: 10px;
+    vertical-align: top;*/
+    background-color: lightcoral;
+    color: white;
+    border-radius: 10px 0px 0px 10px;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    flex-flow: wrap;
+}
+
+.bug {
+    background-color: greenyellow;
+    color: black;
+    width: 60px;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+    width: 60px;
+}
+
+.dragon {
+    background-color: darkmagenta;
+    color: white;
+    width: 60px;
+}
+
+.electric {
+    background-color: gold;
+    color: black;
+    width: 60px;
+}
+
+.fairy {
+    background-color: pink;
+    color: black;
+    width: 60px;
+}
+
+.fighting {
+    background-color: darkorange;
+    color: white;
+    width: 60px;
+}
+
+.fire {
+    background-color: firebrick;
+    color: white;
+    width: 60px;
+}
+
+.flying {
+    background-color: lightskyblue;
+    color: black;
+    width: 60px;
+}
+
+.ghost {
+    background-color: slategray;
+    color: black;
+    width: 60px;
+}
+
+.grass {
+    background-color: green;
+    color: white;
+    width: 70px;
+}
+
+.ground {
+    background-color: sandybrown;
+    color: black;
+    width: 60px;
+}
+
+.ice {
+    background-color: cyan;
+    color: black;
+    width: 60px;
+}
+
+.normal {
+    background-color: wheat;
+    color: black;
+    width: 60px;
+}
+
+.poison {
+    background-color: indigo;
+    color: white;
+    width: 70px;
+}
+
+.psychic {
+    background-color: violet;
+    color: black;
+    width: 60px;
+}
+
+.rock {
+    background-color: sienna;
+    color: white;
+    width: 60px;
+}
+
+.steel {
+    background-color: silver;
+    color: black;
+    width: 60px;
+}
+
+.water {
+    background-color: mediumblue;
+    color: white;
+    width: 60px;
+}
+
+

@@ -128,7 +128,39 @@
             $(this).siblings().children().children().text('Michael Choi was here!')
         })
 
+//--$.GET
+        //We are using jQuery to load the JSON data that lives in pokeapo.co/api/v1/pokemon/1/ and logging it to the console.
+        //We are passing in three arguments to the $.get function
+        $(document).ready(function(){
+                $.get("http://pokeapi.co/api/v1/pokemon/1/",    //argument 1: the URL we want to load information from
+                    function(res) {                             //argument 2: by having function take an argument (i.e., res), we can access this argument later
+                    console.log(res);                           
+                }, "json");                                     //argument 3: the type of information we are expectig to get back (i.e., json)
 
+        //Traversing JSON objects
+        $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+            console.log(res.types[0].name);                     //logs value of index 0 of key 'types'
+            console.log(res.types[1].name);                     //logs value of index 1 of key 'types'
+        }, "json");
+
+        //For loop for traversing
+        $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+            for(var i = 0; i < res.types.length; i++) {
+                console.log(res.types[i].name);
+            }
+        }, "json");
+
+        //Writing HTML with $.get
+        $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {    //pass in URL; declare variable res
+            var html_str = "";                                          //declare var html_str as empty string so that we can use it for callback
+            html_str += "<h4>Types</h4>";                               //starts HTML string with "<h4>Types</h4>"
+            html_str += "<ul>";                                         //next string inserted is "<ul>"
+            for(var i = 0; i < res.types.length; i++) {                 //this for loop lists all values under Pokemon type
+                html_str += "<li>" + res.types[i].name + "</li>";       //adds string "<li>pokemonType</li>"
+            }
+            html_str += "</ul>";                                        //adds closing tag </ul>
+            $("#bulbasaur").html(html_str);                             //calls the function
+        }, "json");                                                     //we expect to receive a JSON response
 
     </script>
     </head>
