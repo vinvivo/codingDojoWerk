@@ -1,0 +1,69 @@
+Vinney Le
+03 July 2017
+
+Assignment: Practice your pip
+
+pip install Django
+	>Download progress bar for Django-1.11.3-py2.py3-non-any.wh1
+	>Download progress bar for pytz-2017.2-pyz.py3-none-any.wh1	
+	>Successfully installed Django-1.11.3 pytz-2017.2
+	
+	This command installs Django and shows the download progress 
+	bars for each package.
+
+pip list
+	>DEPRACATION warning message
+	>Django (1.11.3)
+	>pip (9.0.1)
+	>pytz (2017.2)
+	>setuptools (32.1.0)
+	>wheel (0.29.0)
+	
+	This command lists installed pip packages
+
+
+pip install Django
+	>Requirement already satisfied: Django in /usr/local/lib/python2.7/
+	site-packages
+	>Requirement already satisfied: pytz in /usr/local/lib/python2.7/
+	site-packages (from Django) 
+	
+	The information returned states that Django’s packages are already 
+	installed.
+
+pip freeze
+	>Django==1.11.3
+	>pytz==2017.2
+	
+	This command lists installed pip packages in “requirements format”.
+	Requirements format is the formatting specific for “requirements
+	files”. Requirements files are like a list of programs that make up 
+	an installation package. Using the example above, the current list of 
+	programs to be installed are Django v. 1.11.3 and pytz v. 2017.2. 
+	Using pip freeze will take a snapshot of what’s installed on your 
+	current working environment and make a list of those packages and 
+	those version numbers.
+
+pip freeze > requirements.txt
+	This command saves the packages installed in the current working 
+	environment to a txt file on the Desktop.
+
+pip uninstall Django
+	>list of Django package files
+	>Proceed (y/n)? y
+	>Successfully uninstalled Django-1.11.3
+
+	This command uninstalls the Django package after an initial 
+	checkpoint confirming this action.
+
+pip show Django
+	>
+	
+	This command shows information about the installed Django package. 	Since I uninstalled this package, the return is blank.
+
+pip search Flask
+	>search results matching <query> Flask
+	
+	This command searches Python Package Index (PyPI) for packages whose 
+	name or summary contains the <query> value of “Flask”
+

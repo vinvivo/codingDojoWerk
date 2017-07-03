@@ -1,0 +1,36 @@
+PYTHON: Strings and Lists
+
+03 July 2017
+Vinney Le
+
+Find and Replace
+	>>> words = "It's thanksgiving day. It's my birthday, too!"
+	>>> words.find("day")
+	18
+	>>> words.replace("day", "month")
+	"It's thanksgiving month. It's my birthmonth, too!"
+
+
+Min and Max
+	>>> x = [2,54,-2,7,12,98]
+	>>> min(x)
+	-2
+	>>> max(x)
+	98
+
+First and Last
+	>>> x = ["hello",2,54,-2,7,12,98,"world"]
+	>>> firstLast = [x[0],x[len(x)-1]]
+	>>> print firstLast
+	['hello', 'world']
+
+New List
+	>>> x = [19,2,54,-2,7,12,98,32,10,-3,6]
+	>>> x = sorted(x)
+	>>> print x
+	[-3, -2, 2, 6, 7, 10, 12, 19, 32, 54, 98]
+	>>> y = [x[:len(x)/2]] + x[len(x)/2:]
+	>>> print y
+	[[-3, -2, 2, 6, 7], 10, 12, 19, 32, 54, 98]
+
+
