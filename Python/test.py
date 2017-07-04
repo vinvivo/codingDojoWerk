@@ -1,13 +1,9 @@
-def isStr (list):
-    count = 0
-    sum = 0
-    strings = []
-    while count < len(list):
-        for element in list:
-            if isinstance(element, str):
-                strings.append(element)
-                count += 1
-        print "The array you entered is of string type"
-        print "String:", " ".join(strings)
+a = [1, 2, 5, 10, 255, 3]
+count = 0
+sum = 0
 
-isStr(["magical unicorns","hello","world"])
+while count < len(a):
+    for element in a:
+        sum += element
+        count += 1
+print sum/count
