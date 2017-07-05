@@ -6,8 +6,8 @@
     Vinney
 
     Odd/Even:
-        Create a function called odd_even that counts from 1 to 2000. As your 
-        loop executes have your program print the number of that iteration and 
+        Create a function called odd_even that counts from 1 to 2000. As your
+        loop executes have your program print the number of that iteration and
         specify whether it's an odd or even number.
 
         Your program output should look like below:
@@ -29,7 +29,7 @@
             b = multiply(a, 5)
             print b
         Should print [10, 20, 50, 80 ].
-    
+
     Hacker Challenge:
         Write a function that takes the multiply function call as an argument.
         Your new function should return the multiplied list as a
@@ -47,12 +47,42 @@
 '''
 
 
+# Odd/Even:
 def odd_even():     # Create a function called odd_even
     for count in range(1, 2001):    # that counts from 1 to 2000 (inclusive)
-        if count % 2 != 0:
+        if count % 2 != 0:  # determines if count is odd
             num = "odd number"
-        elif count % 2 == 0:
+        elif count % 2 == 0:    # determines if count is even
             num = "even number"
-        print "Number is {}. This is an {}.".format(count, num)
+        print "Number is {}. This is an {}.".format(count, num)  # interpolate
 
 odd_even()
+
+
+# Multiply
+def multiply(lis, multiplier):
+    multiples = []  # create new list to hold calculated products
+    for multiplicand in lis:    # iterates through each element in lis
+        multiplicand *= multiplier  # multiplies element by multiplier
+        multiples.append(multiplicand)  # adds product to new list
+    return multiples    # returns new list so it can be printed
+
+a = [2, 4, 10, 16]  # test case
+b = multiply(a, 5)
+print b
+
+
+# Hacker Challenge:
+def layered_multiples(arr):  # given
+    new_array = []  # create new list to hold modified results
+    for val in arr:  # iterates through elements in passed in arr
+        count = 0   # count will tell the while loop when to stop
+        string = []  # container for 1s
+        while count < val:  # loop counts up to val starting from 0
+            string.append(1)    # since we want to create a list of 1s vs. string of 1s, use .append
+            count += 1  # incrementer
+        new_array.append(string)    # appends string to new_array to create nested list
+    return new_array    # returns new_array for printing
+
+x = layered_multiples(multiply([2, 4, 5], 3))   # test case
+print x
