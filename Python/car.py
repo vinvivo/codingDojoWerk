@@ -27,12 +27,3 @@ class Car(object):
 
     def display_all(self):
         print "Price: ${}; Speed: {} mph; Fuel: {}; Mileage: {} miles; Tax: {}%".format(self.price, self.speed, self.fuel, self.mileage, self.tax * 100)
-
-
-toyota = Car(10000, 90, "Full", 40)
-tesla = Car(101000, 120, "Full", 99)
-alfa_romeo = Car(41999, 95, "Half full", 25)
-peugeot = Car(8800, 80, "Full", 30)
-fisker = Car(109800, 140, "Empty", 30)
-renault = Car(9000, 80, "Half full", 33)
-
