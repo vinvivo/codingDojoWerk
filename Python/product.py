@@ -1,4 +1,4 @@
-""" Assignment: Product
+""" Assignment: OOP | Product
     05 July 2017
     Vinney
 
@@ -13,7 +13,7 @@
 
     Methods:
     - Sell: changes status to "sold"
-    - Add tax: takes tax as a decimal amount as a parameter and returns the 
+    - Add tax: takes tax as a decimal amount as a parameter and returns the
       price of the item including sales tax
     - Return: takes reason for return as a parameter and changes status
       accordingly. If the item is being returned because it is defective change
@@ -27,26 +27,92 @@
 """
 
 
-class Car(object):
-    def __init__(self, price, speed, fuel, mileage):
-        self.price = price  # in $USD
-        self.speed = speed  # in miles per gallon
-        self.fuel = fuel    # qualitative values
-        self.mileage = mileage
-        if self.price > 10000:
-            self.tax = 0.15
-        else:
-            self.tax = 0.12
-        self.display_all()
+class Product(object):
+    def __init__(self, price, name, brand, weight, cost):
+        self.price = price          # in $USD
+        self.name = name
+        self.brand = brand
+        self.weight = weight        # in oz
+        self.cost = cost            # in $USD
+        self.status = "for sale"    # "for sale" or "sold"
 
-    def display_all(self):
-        print "Price: ${}; Speed: {} mph; Fuel: {}; Mileage: {} miles; Tax: {}%".format(self.price, self.speed, self.fuel, self.mileage, self.tax * 100)
+    def sell(self):
+        """Changes the status to "sold" """
+        self.status = "sold"
+        return self
+
+    def add_tax(self, tax):         # tax parameter is decimal
+        """Adds tax to the price to determine total price"""
+        self.tax = tax
+        self.price *= (1.0 + tax)     # adds tax to price
+        return self
+
+    def return_item(self, reason_for_return):
+        """Modifies status and price according to reason_for_return"""
+        self.reason_for_return = reason_for_return
+        if reason_for_return == "defective":
+            self.status = "defective"
+            self.price = 0
+        elif reason_for_return == "unopened, like new":
+            self.status = "for sale"
+        elif reason_for_return == "opened":
+            self.status = "used"
+            self.price *= 0.8       # adds 20% discount
+        return self
+
+    def display_info(self):
+        print "Price: $" + str(self.price)
+        print "Item Name:", self.name
+        print "Brand:", self.brand
+        print "Weight:", self.weight, "oz."
+        print "Cost: $" + str(self.cost)
+        print "Status:", self.status
 
 
-toyota = Car(10000, 90, "Full", 40)
-tesla = Car(101000, 120, "Full", 99)
-alfa_romeo = Car(41999, 95, "Half full", 25)
-peugeot = Car(8800, 80, "Full", 30)
-fisker = Car(109800, 140, "Empty", 30)
-renault = Car(9000, 80, "Half full", 33)
-
+# test cases
+phone = Product(649, "iPhone 7 Plus", "Apple", 6.63, 224.80)
+# phone.display_info()
+    """Should return:
+       Price: $649
+       Item Name: iPhone 7 Plus
+       Brand: Apple
+       Weight: 6.63 oz.
+       Cost: $224.8
+       Status: for sale
+    """
+# phone.add_tax(0.08).sell().display_info()
+    """Should return:
+       Price: $700.92
+       Item Name: iPhone 7 Plus
+       Brand: Apple
+       Weight: 6.63 oz.
+       Cost: $224.8
+       Status: sold
+    """
+# phone.add_tax(0.08).sell().return_item("defective").display_info()
+    """Should return:
+       Price: $0
+       Item Name: iPhone 7 Plus
+       Brand: Apple
+       Weight: 6.63 oz.
+       Cost: $224.8
+       Status: defective
+    """
+# phone.add_tax(0.08).sell().return_item("unopened, like new").display_info()
+    """Should return:
+       Price: $700.92
+       Item Name: iPhone 7 Plus
+       Brand: Apple
+       Weight: 6.63 oz.
+       Cost: $224.8
+       Status: for sale
+    """
+# phone.add_tax(0.08).sell().return_item("opened").display_info()
+    """Should return:
+       Price: $560.736
+       Item Name: iPhone 7 Plus
+       Brand: Apple
+       Weight: 6.63 oz.
+       Cost: $224.8
+       Status: used
+    """
