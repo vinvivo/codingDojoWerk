@@ -1,16 +1,13 @@
 """ Assignment: OOP | Product
     05 July 2017
     Vinney
-
     The owner of a store wants a program to track products. Create a product
     class to fill the following requirements.
-
     Product Class:
     Attributes:
     - Price             - Brand
     - Item Name         - Cost
     - Weight            - Status: default "for sale"
-
     Methods:
     - Sell: changes status to "sold"
     - Add tax: takes tax as a decimal amount as a parameter and returns the
@@ -21,7 +18,6 @@
       box, like new mark it as for sale. If the box has been opened set status
       to used and apply a 20% discount.
     - Display Info: show all product details.
-
     Every method that doesn't have to return something should return self so
     methods can be chained.
 """
