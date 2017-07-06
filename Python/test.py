@@ -1,27 +1,27 @@
-class Bike(object):
-    def __init__(self, price, max_speed, miles = 0):    # last parameter sets default value
+class Car(object):
+    def __init__(self, price, speed, fuel, mileage, tax = 0.12):
         self.price = price  # in $USD
-        self.max_speed = max_speed  # in miles per hour
-        self.miles = miles
-    def displayInfo(self):
-        print "Price: ${}; Max Speed: {} mph; Mileage: {} miles".format(self.price, self.max_speed, self.miles)
-    def ride(self):
-        print "Riding..."
-        self.miles += 10
-        return self
-    def reverse(self):
-        if self.miles > 0:
-            print "Reversing..."
-            self.miles -= 5
-            return self
-        else:
-            print "Cannot reverse any more"
-            return self
+        self.speed = speed  # in miles per gallon
+        self.fuel = fuel    # qualitative values
+        self.mileage = mileage
+        self.tax = tax
+        if self.price > 10000:
+            self.tax = 0.15
 
-specialized = Bike(11500, 25)
-felt = Bike(8999, 23)
-orbea = Bike(7500, 22)
+    def display_all(self):
+        print "Price: ${}; Speed: {} mph; Fuel: {}; Mileage: {} miles; Tax: {}%".format(self.price, self.speed, self.fuel, self.mileage, self.tax * 100)
 
-specialized.ride().ride().ride().reverse().displayInfo()
-felt.ride().ride().reverse().reverse().displayInfo()
-orbea.reverse().reverse().reverse().displayInfo()
+
+toyota = Car(10000, 90, "Full", 40)
+tesla = Car(101000, 120, "Full", 99)
+alfa_romeo = Car(41999, 95, "Half full", 25)
+peugeot = Car(8800, 80, "Full", 30)
+fisker = Car(109800, 140, "Empty", 30)
+renault = Car(9000, 80, "Half full", 33)
+
+toyota.display_all()
+tesla.display_all()
+alfa_romeo.display_all()
+peugeot.display_all()
+fisker.display_all()
+renault.display_all()
