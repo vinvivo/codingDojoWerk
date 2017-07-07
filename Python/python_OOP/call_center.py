@@ -51,6 +51,7 @@ import pprint       # for printing readable lists
 
 instances = []     # used to track number of instances of Call objects
 
+
 class Call(object):
 
     def __init__(self, name, reason):   # takes 2 parameters
@@ -58,8 +59,8 @@ class Call(object):
         self.name = name
         """<phone number generator>"""
         randomNum1 = 415
-        randomNum2 = random.randint(200,999)
-        randomNum3 = random.randint(1000,9999)
+        randomNum2 = random.randint(200, 999)
+        randomNum3 = random.randint(1000, 9999)
         self.phoneNum = "{}-{}-{}".format(randomNum1, randomNum2, randomNum3)
         """</phone number generator>"""
         """<time stamp generator>"""
@@ -80,7 +81,7 @@ class Call(object):
 
 
 class CallCenter(object):
-    
+
     def __init__(self):
         """__init__ creates a callback for instances list and counts queue"""
         self.calls = instances
@@ -90,7 +91,7 @@ class CallCenter(object):
         """adds new call with specified arguments"""
         self.instName = Call(name, reason)
         return self
-    
+
     def remove(self):
         """removes caller at top of list, i.e., instances[0]"""
         instances.pop(0)
@@ -112,4 +113,3 @@ center1 = CallCenter()
 center1.info()
 center1.add("ring5", "Hugo", "Comment").info()
 center1.add("ring5", "Hugo", "Comment").remove().info()
-
