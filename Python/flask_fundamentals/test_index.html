@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wish List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{ url_for ('static' filename = "style.css")}}" type="text/css">
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% end with %}
+        <form action - "/wishlist" method = "POST">
+        Enter the name of your wishlist item:
+        <input type="text" name="item">
+        <input type="submit" name="">
+        </form>
+    </body>
+    <h3>These are your wishlist items:</h3>
+    <ul>
+        {% for something in session["wishlist"] %}
+            <li>{{smomething}}</li>
+        {% endfor %}
+    </ul>
+</html>
