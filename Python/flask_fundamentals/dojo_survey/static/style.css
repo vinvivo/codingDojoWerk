@@ -1,0 +1,28 @@
+* {
+    margin: auto;
+}
+
+body {
+    width: 50%;
+}
+
+h1, h3 {
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+
+li, p {
+    margin-bottom: 1%;
+}
+
+p, label {
+    width: 70%;
+} 
+
+select, span, #comments {
+    width: 25%;
+}
+
+.results {
+    display: inline-block;
+}
