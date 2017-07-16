@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Teenage Mutant Ninja Turtles</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="This is Vinney's practice assignment, Disappearing Ninjas, for Python/ Flask">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='../static/style.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+</head>
+<body>
+    <fieldset>
+        {% if color == "blue" %}
+            <h1>Leonardo</h1>    
+            <img src='{{ url_for('static', filename='leonardo.jpg') }}' alt='Image of Leonardo, the blue Ninja Turtle'>
+        {% elif color == "orange" %}
+            <h1>Michelangelo</h1>
+            <img src='{{ url_for('static', filename='michelangelo.jpg') }}' alt='Image of Michelangelo, the orange Ninja Turtle'>
+        {% elif color == "red" %}
+            <h1>Raphael</h1>
+            <img src='{{ url_for('static', filename='raphael.jpg') }}' alt='Image of Raphael, the red Ninja Turtle'>
+        {% elif color == "purple" %}
+            <h1>Donatello</h1>
+            <img src='{{ url_for('static', filename='donatello.jpg') }}' alt='Image of Donatello, the purple Ninja Turtle'>
+        {% else %}
+            <h1>Not-April</h1>
+            <img src='{{ url_for('static', filename='notapril.jpg') }}' alt='Image of Not-April'>
+        {% endif %}
+    </fieldset>
+</body>
+</html>
