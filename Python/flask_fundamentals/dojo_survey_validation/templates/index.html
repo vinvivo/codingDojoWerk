@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dojo Survey with Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="static/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Dojo Survey</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form name="" action="/results" method="POST">
+          <ol>
+            <li>
+              <p>How important is it to know the truth?</p>
+              <select name="truth">
+                <option value="extremely">Extremely important</option>
+                <option value="very">Very important</option>
+                <option value="somewhat">Somewhat important</option>
+                <option value="slightly">Slightly important</option>
+                <option value="notatall">Not at all important</option>
+              </select>
+              <br><br>
+            </li>
+            <li>
+              <label for="comments">Comments:</label>
+              <br>
+              <input type="text" id="comments" name="comments">
+            </li>
+          </ol>
+
+          <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
