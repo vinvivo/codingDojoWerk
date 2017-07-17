@@ -1,0 +1,7 @@
+1. Create a project
+    django-admin startproject {{project_name}}
+
+2. create 'apps' folder
+3. add __init__.py in 'apps'
+4. 
+5. 

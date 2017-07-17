@@ -1,0 +1,11 @@
+A good resource for you to get familiar with Regex is regex.org
+
+Here is a cheat sheet for expressions you'll be using regularly:
+    '^'    Matches the following characters at the beginning of a string. Example: '^a' matches        'anna' but not 'banana'.
+    '$'     Matches the previous characters at the end of a string. Example: 'a$' matches 'anna'        and 'banana' but not 'fan'.
+    '[]'    Matches any value in a range. Example: '[0-9]' matches '9' and '9s'.
+    '{n}' Matches n number or more repetitions of the preceding pattern. Example: '[0-9]{2}' matches '91' and '9834' but not '9'
+    \d Matches digits.  Example: "\d" matches "8" and "877x"
+    \w Matches characters.
+
+ If you're curious and you have some spare time try Regex One (https://regexone.com/) to practice your patterns.

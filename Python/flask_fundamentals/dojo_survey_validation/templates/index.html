@@ -15,27 +15,13 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <form name="" action="/results" method="POST">
-          <ol>
-            <li>
-              <p>How important is it to know the truth?</p>
-              <select name="truth">
-                <option value="extremely">Extremely important</option>
-                <option value="very">Very important</option>
-                <option value="somewhat">Somewhat important</option>
-                <option value="slightly">Slightly important</option>
-                <option value="notatall">Not at all important</option>
-              </select>
-              <br><br>
-            </li>
-            <li>
-              <label for="comments">Comments:</label>
-              <br>
-              <input type="text" id="comments" name="comments">
-            </li>
-          </ol>
-
-          <input type="submit" value="Submit">
-        </form>
+          <form action='/process' method='POST'>
+            <p>Email:<input type="text" name="email"></p>
+            <p>First Name:<input type="text" name="first_name"></p>
+            <p>Last Name:<input type="text" name="last_name"></p>
+            <p>Password:<input type="text" name="password"></p>
+            <p>Confirm Password:<input type="text" name="confirm_password"></p>
+            <p><input type="submit" value="Submit"></p>
+          </form>
     </body>
 </html>
