@@ -15,6 +15,6 @@ def create_user():
 
 @app.route('/show')
 def show_user():
-   return render_template('user.html', name=session['name'], email=session['email'])
+   return render_template('users.html', name=session['name'], email=session['email'])
 
 app.run(debug=True)
