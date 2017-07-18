@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Survey Form: Django</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Survey Form, for Python/ Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+</head>
+<body>
+    <fieldset>
+        <p>Thanks for submitting this form! You have submitted this form {{ request.session.counter }} times now.</p>
+    </fieldset>
+    <fieldset>
+        <h1>Submitted Information</h1>
+        <p>Name: {{ request.session.name }}</p>
+        <p>Dojo Location: {{ request.session.location }}</p>
+        <p>Favorite Language: {{ request.session.language }}</p>
+        <p>Comment: {{ request.session.comment }}</p>
+    </fieldset>
+</body>
+</html>

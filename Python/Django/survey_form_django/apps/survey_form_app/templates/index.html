@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Survey Form: Django</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Survey Form, for Python/ Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+</head>
+<body>
+    <fieldset>
+        <form action="/process" method="POST">
+            {% csrf_token %}
+            Your Name: <input type="text" name="name"><br>
+            Dojo Location: 
+            <select name="location">
+                <option value="San Jose">San Jose</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Berkeley">Berkeley</option>
+            </select><br>
+            Favorite Language:
+            <select name="language">
+                <option value="JavaScript">JavaScript</option>
+                <option value="English">English</option>
+                <option value="Python">Python</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Spanish">Spanish</option>
+            </select><br>
+            <label>Comment (optional):</label><br>
+            <textarea name="comment"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </fieldset>
+</body>
+</html>
