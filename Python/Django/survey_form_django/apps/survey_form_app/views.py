@@ -8,10 +8,10 @@ def process(request):
     request.session['location'] = request.POST['location']
     request.session['language'] = request.POST['language']
     request.session['comment'] = request.POST['comment']
-    return redirect("/result")
+    return redirect("/")
 
 def result(request):
     if not 'counter' in request.session:
         request.session['counter'] = 1
     request.session['counter'] += 1
-    return render(request, "result.html")
+    return redirect(request, "result.html")

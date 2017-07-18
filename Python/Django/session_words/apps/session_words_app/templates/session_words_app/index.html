@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Session Words: Django</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Session Words, for Python/ Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+</head>
+<body>
+    <div id="word_form">
+        <form action="/add_word" method="POST">
+            {% csrf_token %}
+            <h5>Add a new word</h5> <input class="indent" type="text" name="new_word"><br><br>
+            Choose a color:<br>
+            <input type="radio" class="indent" name="colorpick" value="red" checked> Red<br>
+            <input type="radio" class="indent" name="colorpick" value="green"> Green<br>
+            <input type="radio" class="indent" name="colorpick" value="blue"> Blue<br><br>
+            <input type="checkbox" name="bigtext" value="big"> Show in BIG font size<br><br>
+            <input id="add" type="submit" name="add_to_session" value="Add to Session">
+        </form>
+    </div>
+    <div id="wrapper">
+        <form action="/clear/clear" method="POST">
+            {% csrf_token %}
+            <input id="clear" type="submit" name="clear_session" value="Clear Session">
+        </form>
+        <div id="session_words">
+            {% for item in request.session.word_list %}
+                <p><span class="{{ item.color }} {{ item.fontsize }}">{{ item.word }}</span> - created at {{ item.timestamp }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
