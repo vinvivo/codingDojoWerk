@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Random Word Generator</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Random Word Generator, for Python/Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+</head>
+<body>
+    <form action="/" method="post">
+    {% csrf_token %}
+        <h1>Random Word (attempt #{{ request.session.counter }})</h1>
+        <fieldset>
+            <h3>{{ word }}</h3>
+        </fieldset>
+        <input class="button" type="submit" value="Generate" name="generate_word">
+    </form>
+</body>
+</html>
