@@ -17,10 +17,10 @@
             {% csrf_token %}
             <h5>Add a new word</h5> <input class="indent" type="text" name="new_word"><br><br>
             Choose a text color:<br>
-            <input type="radio" class="indent" name="colorpick" value="red" checked> Tomato<br>
-            <input type="radio" class="indent" name="colorpick" value="green"> Yellow-Green<br>
-            <input type="radio" class="indent" name="colorpick" value="blue"> Royal Blue<br><br>
-            <input type="checkbox" name="bigtext" value="big"> Show in BIG font size<br><br>
+            <input type="radio" class="indent" name="colorpick" value="red" checked><span class="red" > Tomato</span><br>
+            <input type="radio" class="indent" name="colorpick" value="green"><span class="green" > Yellow-Green</span><br>
+            <input type="radio" class="indent" name="colorpick" value="blue"><span class="blue" > Royal Blue</span><br><br>
+            <input type="checkbox" name="bigtext" value="big"> Show in <span class="big">BIG</span> font size<br><br>
             <input id="add" type="submit" name="add_to_session" value="Add to Session">
         </form>
     </div>

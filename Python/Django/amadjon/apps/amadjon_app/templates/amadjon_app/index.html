@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>AMADJON</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="DESCRIPTIVE_TEXT">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<!--      Latest compiled and minified CSS 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- Link to my own CSS and JS files -->
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Link to Google Fonts: Montserrat family -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <section>
+  <!--for demo wrap-->
+  <h1>A m a dj o n</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>I t e m</th>
+          <th>P r i c e</th>
+          <th>Q u a n t i t y</th>
+          <th>A c t i o n s</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr>
+            <td>Dojo Tshirt</td>
+            <td>$ 20</td>
+            <form action="/buy/shirt" method="POST">
+            {% csrf_token %}
+                <td>
+                    <select name="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" id="shirt" name="shirt" value="B U Y">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <td>Dojo Sweater</td>
+            <td>$ 30</td>
+            <form action="/buy/sweater" method="POST">
+            {% csrf_token %}
+                <td>
+                    <select name="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" id="sweater" name="sweater" value="B U Y">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <td>Dojo Cup</td>
+            <td>$ 5</td>
+            <form action="/buy/cup" method="POST">
+            {% csrf_token %}
+                <td>
+                    <select name="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" id="cup" name="cup" value="B U Y">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <td>Algorithm Book</td>
+            <td>$ 50</td>
+            <form action="/buy/book" method="POST">
+            {% csrf_token %}
+                <td>
+                    <select name="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" id="book" name="book" value="B U Y">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <td>Dojo Fidget Spinner</td>
+            <td>$ 10</td>
+            <form action="/buy/spinner" method="POST">
+            {% csrf_token %}
+                <td>
+                    <select name="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" id="spinner" name="spinner" value="B U Y">
+                </td>
+            </form>
+        </tr>
+        <tr>
+            <td>Dojo Tuition Gift Card</td>
+            <td>$ 13,500</td>
+            <form action="/buy/tuition" method="POST">
+            {% csrf_token %}
+                <td>
+                    <select name="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" id="tuition" name="tuition" value="B U Y">
+                </td>
+            </form>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- follow me template -->
+<div class="made-with-love">
+  Made with
+  <i>♥</i> by
+  <a target="_blank" href="https://github.com/vinvivo">Vinney Le</a>
+</div>
+</body>
+</html>

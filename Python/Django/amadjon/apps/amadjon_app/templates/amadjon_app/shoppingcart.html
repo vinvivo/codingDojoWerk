@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>AMADJON</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="DESCRIPTIVE_TEXT">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<!--      Latest compiled and minified CSS 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- Link to my own CSS and JS files -->
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Link to Google Fonts: Montserrat family -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <section>
+    <!--for demo wrap-->
+    <h1>A m a dj o n</h1>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>T h a n k &nbsp; y o u &nbsp; f o r &nbsp; y o u r &nbsp; b u s i n e s s !</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <p>Your credit card was just charged ${{ request.session.current_order.subtotal }} for {{ request.session.current_order.qty }} {{request.session.current_order.product_name}}(s)</p>
+    <br><br>
+    <h2>O R D E R &nbsp; H I S T O R Y</h2>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>I t e m</th>
+                    <th>P r i c e</th>
+                    <th>Q u a n t i t y</th>
+                    <th>S u b t o t a l</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+            {% for order in request.session.orders_list %}
+            <tr>
+                <td>{{ order.product_name }}</td>
+                <td>$ {{ order.price }}</td>
+                <td>{{ order.qty }}</td>
+                <td>$ {{ order.subtotal }}</td>
+            <tr>
+            {% endfor %}
+            <tr>
+
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>T O T A L :</th>
+                    <th></th>
+                    <th>{{ request.session.counter }}</th>
+                    <th>$ {{ request.session.total }}</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    </section>
+
+
+<!-- follow me template -->
+<div class="made-with-love big">
+  <a target="_blank" href="/">C O N T I N U E &nbsp;&nbsp;S H O P P I N G</a>
+</div>
+<div class="made-with-love">
+  <a target="_blank" href="/delete">- - - - Clear your shopping cart - - - -</a>
+</div>
+</body>
+</html>

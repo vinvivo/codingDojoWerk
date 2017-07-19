@@ -16,8 +16,8 @@ def add_word(request):
     word_input = {
                   "word": request.POST['new_word'],
                   "color": request.POST['colorpick'],
-                  "fontsize": font_size
-                  "timestamp": time,
+                  "fontsize": font_size,
+                  "timestamp": time
                  }
     request.session['word_list'].append(word_input)
     request.session.modified = True

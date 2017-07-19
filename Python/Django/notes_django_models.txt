@@ -1,0 +1,21 @@
+from __future__ import 
+
+from django 
+
+class Sushi(models.Model)
+
+
+
+
+python manage.py shell  # we use the shell to practice our queries
+
+from apps.orm_app.models import Sushi
+Sushi.objects.create(fish="salmon", rice=True, quantity=30)
+Sushi.objects.create(fish="spicy tune", rice=True, quantity=30000)
+Sushi.objects.create(fish="makerel", rice=False, quantity=3)
+Sushi.objects.all()
+Sushi.objects.all.values()  # list dictionary values
+Sushi.objects.filter(rice=True).values()  # filters object results
+Sushi.objects.get(rice=False).values()  # gets first match
+
+exit()
