@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Ninja Money: Django</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Ninja Gold, for learning Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--      Latest compiled and minified CSS 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- Link to my own CSS and JS files -->
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Link to Google Fonts: Montserrat family -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <h1>W e l c o m e &nbsp; t o &nbsp; N i n j a &nbsp; G o l d : Django edition!</h1>
+    <p>Y O U R &nbsp; G O L D : </p>
+    <div class="textbox">
+        {{ request.session.total_gold }}
+    </div>
+    <div class="wrapper">
+<!-- FARM MONEY -->
+        <div class="column">
+            <h3>F A R M</h3>
+            <p>+ 10-20 gold</p>
+            <form action="/process_money/farm" method="POST">
+            {% csrf_token %}
+                <input type="submit" id="farm" name="farm" value="F I N D &nbsp; G O L D">
+            </form>
+        </div>
+<!--CAVE MONEY  -->
+        <div class="column">
+            <h3>C A V E</h3>
+            <p>+ 5-10 gold</p>
+            <form action="/process_money/cave" method="POST">
+            {% csrf_token %}
+                <input type="submit" name="cave" value="F I N D &nbsp; G O L D">
+            </form>
+        </div>
+<!-- HOUSE MONEY  -->
+        <div class="column">
+            <h3>H O U S E</h3>
+            <p>+ 2-5 gold</p>
+            <form action="/process_money/house" method="POST">
+            {% csrf_token %}
+                <input type="submit" name="house" value="F I N D &nbsp; G O L D">
+            </form>
+        </div>
+<!--CASINO MONEY  -->
+        <div class="column">
+            <h3>C A S I N O</h3>
+            <p>+/– 0-50 gold</p>
+            <form action="/process_money/casino" method="POST">
+            {% csrf_token %}
+                <input type="submit" name="casino" value="F I N D &nbsp; G O L D">
+            </form>
+        </div>
+    </div>
+<!-- ACTIVITY LOG  -->
+    <p>A C T I V I T I E S :</p>
+    <div class="textarea">
+        {% for item in request.session.activity_list %}
+        <p class="{{ item.fate }}">{{ item.fate }} {{ item.gold }} gold from the {{ item.location }} -- ({{ item.time }})</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
