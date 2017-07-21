@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Semi-RESTful Users</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Semi-RESTful Users, for Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <!-- <link href='static/style.css' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'> -->
+</head>
+<body>
+    <section>
+    <h1>e d i t &nbsp; u s e r : &nbsp; {{ user_list.id }}</h1>
+    <form action="/users/{{ user_list.id }}/update" method="POST">
+    {% csrf_token %}
+        <p><span>F U L L &nbsp; N A M E :</span><input type="text" name="first_name" value="{{ user_list.first_name }}"></p>
+        <p><span>L A S T &nbsp; N A M E :</span><input type="text" name="last_name" value="{{ user_list.last_name }}"></p>
+        <p><span>E M A I L :</span><input type="text" name="email" value="{{ user_list.email }}"></p>
+        <input type="submit" value="U P D A T E"> | <a class="endbutton" href="/users/{{ user_list.id }}">S H O W</a> | <a class="endbutton" href="/users">G O &nbsp; B A C K</a>
+    </form>
+    </section>
+</body>
+</html>

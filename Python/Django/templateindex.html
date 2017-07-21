@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Semi-RESTful Users</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Semi-RESTful Users, for Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <!-- <link href='static/style.css' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'> -->
+</head>
+<body>
+    <section>
+    <h1>Users</h1>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>i d</th>
+                    <th>F u l l &nbsp; N a m e</th>
+                    <th>E m a i l</th>
+                    <th>C r e a t e d &nbsp; A t</th>
+                    <th>A c t i o n s</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <!-- for item in list  -->
+                <tr>
+                    <form action="/" method="POST">
+                    {% csrf_token %}
+                    <td>@ item.id @</td>
+                    <td>@ item.name @</td>
+                    <td>@ item.email @</td>
+                    <td>@ item.created_at @</td>
+                    <td>
+                        <input type="submit" id="show" name="show" value="S H O W">
+                        <input type="submit" id="edit" name="edit" value="E D I T">
+                        <input type="submit" id="delete" name="delete" value="D E L E T E">
+                    </td>
+                    </form>
+                <!-- endfor  -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </section>
+</body>
+</html>
