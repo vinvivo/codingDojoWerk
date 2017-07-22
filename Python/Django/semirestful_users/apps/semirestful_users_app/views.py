@@ -3,7 +3,6 @@ from .models import User
 from django.core.urlresolvers import reverse
 from time import gmtime, strftime
 from datetime import datetime
-
 # Create your views here.
 def index(request):
     context = {

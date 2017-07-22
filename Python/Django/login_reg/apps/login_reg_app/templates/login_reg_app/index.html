@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Login or Register</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Login and Registration, for Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <!-- <link href='static/style.css' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'> -->
+</head>
+<body>
+    <section>
+        <h1>R e g i s t e r &nbsp; a &nbsp; n e w &nbsp; u s e r</h1>
+        {% if messages %}
+        <ul class='messages'>
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/users" method="POST">
+        {% csrf_token %}
+            <p><span>F I R S T &nbsp; N A M E :</span><input type="text" name="first_name"></p>
+            <p><span>L A S T &nbsp; N A M E :</span><input type="text" name="last_name"></p>
+            <p><span>E M A I L :</span><input type="text" name="email"></p>
+            <p><span>P A S S W O R D :</span><input type="password" name="password"></p>
+            <p><span>P A S S W O R D &nbsp; C O N F I R M A T I O N :</span><input type="password" name="password_conf"></p>
+            <input type="submit" value="C  R  E  A  T  E">
+        </form>
+
+        <h1>L o g i n &nbsp; a n &nbsp; e x i s t i n g &nbsp; u s e r</h1>
+        <form action='/users/login', method="POST">
+            {% csrf_token %}
+            <p><span>E M A I L :</span><input type="text" name="email"></p>
+            <p><span>P A S S W O R D :</span><input type="password" name="password"></p>
+            <input type="submit" value="L O G &nbsp; I N">
+        </form>
+    </section>
+</body>
+</html>
