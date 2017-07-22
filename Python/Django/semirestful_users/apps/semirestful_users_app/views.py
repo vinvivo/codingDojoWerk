@@ -51,5 +51,7 @@ def update(request, id):
         q.save()
         return redirect('/users/' + id)
         
-def destroy(request):
-    pass
+def destroy(request, id):
+    q = User.objects.get(id = id)
+    q.delete()
+    return redirect('/users')

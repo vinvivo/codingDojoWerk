@@ -21,7 +21,7 @@
         <p><span>C R E A T E D &nbsp; A T :</span> &nbsp; {{ user_list.created_at}}</p>
         <p><span>U P D A T E D &nbsp; A T :</span> &nbsp; {{ user_list.updated_at}}</p>
         <br>
-        <a class="endbutton" href="/users">G O &nbsp; B A C K</a> | <a class="endbutton" href="/users/{{ user_list.id }}/edit">E D I T</a> | <a class="endbutton" href="/">D E L E T E</a>
+        <a class="endbutton" href="/users">G O &nbsp; B A C K</a> | <a class="endbutton" href="/users/{{ user_list.id }}/edit">E D I T</a> | <a class="endbutton" href="/users/{{ user.id }}/destroy">D E L E T E</a>
     </section>
 </body>
 </html>
