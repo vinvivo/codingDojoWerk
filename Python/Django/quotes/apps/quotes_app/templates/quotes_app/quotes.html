@@ -44,7 +44,7 @@
                 <div id="favorites_wrapper">
                 {% for quote in favorites_list %}
                     <fieldset class="quotes">
-                        <legend class="poster">&nbsp;posted by: <a href="/users/1">{{ quote.poster.alias }}&nbsp;</a></legend>
+                        <legend class="poster">&nbsp;posted by: <a href="/users/{{ quote.poster.id }}">{{ quote.poster.alias }}&nbsp;</a></legend>
                         <p>{{ quote.quotation }}</p>
                         <p><span class="author">{{ quote.author }}</span></p>
                     </fieldset>
