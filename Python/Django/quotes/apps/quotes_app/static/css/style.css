@@ -1,0 +1,420 @@
+* {
+    font-size: 13px;
+    color: indianred;
+}
+h1{
+    font-size: 3em;
+    color: indianred;
+    text-transform: uppercase; 
+    font-weight: 700;
+    letter-spacing: 3px;
+    /* text-align: center;  */
+    margin-bottom: 50px;
+}
+h2{
+    font-size: 2em;
+    color: indianred;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    display: block;
+}
+/* p {
+    margin: 15px;
+} */
+
+section {
+    display: flex;
+    width: 90vw;
+    height: 70vh;
+    justify-content: space-around;
+    align-items: top;
+}
+div#quote_left {
+    width: 40vw;
+}
+div#faves-add_right {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+
+fieldset{
+    /* display: flex;
+    flex-direction: column; */
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 2em;
+    border: 3px solid;
+    border-color: white;
+}
+fieldset.login_reg{
+    width: 40%;
+    /* min-width: 530px; */
+}
+fieldset.quotables { 
+    display: inline-block;
+    width: 95%;
+    height: 100%; 
+    margin-left: 2px;
+    margin-right: 2px;
+}
+#quote_list_wrapper {
+    max-height: 95%; 
+    overflow-x: auto;
+}
+fieldset.favorites { 
+    display: inline-block;
+    width: 95%;
+    height: 56.5%;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 20px;
+}
+#favorites_wrapper {
+    max-height: 90%;
+    overflow-x: auto;
+}
+fieldset.quotes{
+    border: 2px dotted white;
+    padding: 0px 30px 10px 30px;
+    margin-bottom: 20px;
+}
+fieldset.add_quote{
+    display: inline-block;
+    width: 95%;
+    max-height: 30%;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+legend {
+    font-size: 1.5em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+legend.poster{
+    font-size: 1em;
+    font-weight: bolder;
+    letter-spacing: 0px;
+}
+
+span {
+    /* margin: 50px; */
+    color: indianred;
+    text-transform: uppercase;
+    /* background-color: transparent; */
+    /* background-color: rgba(255,255,255,0.3);  */
+    /* width: 20%;  */
+    margin: 0px 0px 2px 0px;
+    padding: 5px 10px 5px 10px;  
+    font-size: 1em;
+    letter-spacing: 3px;
+    /* border: 1px solid rgba(255,255,255,0.1); */
+    /* border-radius: 10%; */
+    display: inline-flex;
+    vertical-align: top;
+    width: 125px; 
+    /* background: url(https://static1.squarespace.com/static/54807c90e4b0bc87c520bc67/t/57aa3fdfd482e9a73e563827/1470775266245/) 96% / 25% no-repeat; */
+}
+span.author{
+    background: none;
+    border: none;
+    width: auto;
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: 0px;
+    float: right;
+}
+
+input[id='toggle-heart'] {
+    position: absolute;
+    left: -100vw;
+}
+input[id='toggle-heart']:checked + label {
+    color: #e2264d;
+}
+
+label[for='toggle-heart'] {
+    align-self: center;
+    color: #aab8c2; 
+    font-size: 2em;
+    cursor: pointer;
+}
+
+input[type="text"], input[type="password"], input[type="date"], textarea {
+    color: indianred;
+    /* background-color: transparent; */
+    background-color: rgba(255,255,255,0.3); 
+    /* width: 20%;  */
+    margin: 0px 0px 2px 0px;
+    padding: 5px 10px 5px 10px;
+    font-size: 1em;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-left: 3px solid white;
+    /* border-radius: 10%; */
+    display: inline-flex;
+    width: 66%;
+    font-family: Montserrat, sans-serif;
+    /* align-items: stretch; */
+}
+
+nav, nav a {
+    text-align: right;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+::-webkit-input-placeholder {
+    color: indianred;
+    font-style: italic;
+    font-weight: extra-light;
+}
+::-moz-placeholder {
+    color: indianred;
+    font-style: italic;
+    font-weight: extra-light;
+}
+::-moz-placeholder {
+    color: indianred;
+    font-weight: extra-light;
+    font-style: italic;
+}
+::-ms-input-placeholder {
+    color: indianred;
+    font-style: italic;
+    font-weight: extra-light;
+}
+
+form {
+    vertical-align: center;
+}
+
+fieldset form input[type="submit"] {
+    float: right;
+}
+fieldset form input[type="submit"].small {
+    float: none;
+    margin-top: 10px;
+    /* background-color: transparent; */
+    /* font-size: 2em; */
+    /* margin: 0px; */
+    /* padding: 0px; */
+    /* min-width: 0px; */
+    /* height: 1em; */
+}
+
+table{
+    width:100%;
+    table-layout: fixed;
+}
+.tbl-header{
+    background-color: rgba(255,255,255,0.3);
+ }
+.tbl-content{
+    max-height: 30vh;
+    overflow: scroll;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+    padding: 10px 10px;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 1em;
+    color: indianred;
+    text-transform: uppercase;
+}
+
+tr td:first-child, tr th:first-child{
+    width:4%;
+    white-space:nowrap;
+    text-align: center;
+}
+
+td{
+    padding: 10px;
+    text-align: left;
+    width: auto;
+    vertical-align:middle;
+    font-size: 1em;
+    color: indianred;
+    border-bottom: solid 1px rgba(255,255,255,0.2);
+}
+select {
+    /* margin: 50px; */
+    color: indianred;
+    background-color: transparent;
+    /* width: 20%;  */
+    /* padding: 5px 5px 5px 5px; */
+    font-size: 1em;
+    border: 0px solid #fff;
+    height: 1.5em;
+}
+input[type="submit"].small {
+    /* margin: 50px; */
+    color: indianred;
+    /* background-color: transparent; */
+    background-color: rgba(255,255,255,0.9); 
+    /* width: 20%;  */
+    margin: 2px 0px 2px 0px;
+    padding: 0px 20px 0px 20px;  
+    font-size: 1em;
+    border: 0px solid rgba(255,255,255,0.3); 
+    /* border-radius: 10%; */
+    height: 2em;
+    /* background: url(https://static1.squarespace.com/static/54807c90e4b0bc87c520bc67/t/57aa3fdfd482e9a73e563827/1470775266245/) 96% / 25% no-repeat; */
+}
+
+input[type="submit"] {
+    /* margin: 50px; */
+    color: indianred;
+    /* background-color: transparent; */
+    background-color: rgba(255,255,255,0.9); 
+    /* width: 20%;  */
+    margin: 2px 0px 2px 0px;
+    padding: 10px 20px 10px 20px;  
+    font-size: 1em;
+    border: 1px solid rgba(255,255,255,0.3); 
+    min-width: 13%;
+    /* border-radius: 10%; */
+    /* height: 2em; */
+    /* background: url(https://static1.squarespace.com/static/54807c90e4b0bc87c520bc67/t/57aa3fdfd482e9a73e563827/1470775266245/) 96% / 25% no-repeat; */
+}
+
+input.nothing {
+    /* margin: 50px; */
+    color: indianred;
+    background-color: transparent; 
+    /* background-color: rgba(255,255,255,0.1);  */
+    /* width: 20%;  */
+    margin: 0px;   
+    padding: 0px;   */
+    font-size: 1em;
+    border: none;  */
+    /* border-radius: 10%; */
+    /* height: 2em; */
+    /* background: url(https://static1.squarespace.com/static/54807c90e4b0bc87c520bc67/t/57aa3fdfd482e9a73e563827/1470775266245/) 96% / 25% no-repeat; */
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.tbl-button {
+    margin: 5px 2px 5px 2px;
+    padding: 2px 5px 2px 5px;
+    font-size: 1em;
+    /* border: 1px solid rgba(255,255,255,0.3);  */
+    background-color: rgba(255,255,255,0.2);
+}
+
+a.endbutton {
+    /* margin: 50px; */
+    color: indianred;
+    /* background-color: transparent; */
+    background-color: rgba(255,255,255,0.9); 
+    /* width: 20%;  */
+    margin: 2px 0px 2px 0px;
+    padding: 10px 20px 10px 20px;  
+    font-size: 1em;
+    border: 1px solid rgba(255,255,255,0.3); 
+    /* border-radius: 10%; */
+    height: 2em;
+    min-width: 13%;
+    /* background: url(https://static1.squarespace.com/static/54807c90e4b0bc87c520bc67/t/57aa3fdfd482e9a73e563827/1470775266245/) 96% / 25% no-repeat; */
+}
+
+.error {
+    margin: 0% 5%;
+    color: white;
+    background: -webkit-linear-gradient(left, transparent, indianred, transparent);
+    background: linear-gradient(to right, transparent, indianred, transparent);
+    line-height: 2em;
+    margin-bottom: 5px;
+}
+
+.success {
+    text-align: left;
+}
+
+ul {
+    padding: 0px;
+}
+li {
+    list-style: none;
+    text-align: center;
+}
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+body{
+    background: -webkit-linear-gradient(left, mistyrose, pink);
+    background: -moz-linear-gradient(left, mistyrose, pink);
+    background: -o-linear-gradient(left, mistyrose, pink);
+    background: linear-gradient(to right, mistyrose, pink);
+    font-family: 'Montserrat', sans-serif;
+    margin: 50px auto;
+    width: 90vw;
+    /* background-color:#556;
+    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a), 
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+    background-size:80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px; */
+
+}
+
+
+
+/* follow me template */
+.made-with-love {
+    margin-top: 40px;
+    padding: 10px;
+    clear: left;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    color: white;
+}
+.made-with-love i {
+    font-style: normal;
+    color: white;
+    font-size: 1em;
+    position: relative;
+    top: 2px;
+}
+.made-with-love a {
+    color: white;
+    text-decoration: none;
+}
+.made-with-love a:hover {
+    text-decoration: underline;
+}
+.made-with-love.big a {
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.9); 
+}

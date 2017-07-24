@@ -1,0 +1,73 @@
+<!-- /quotes -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>QUOTELAND: Main</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Quotes, for Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <!-- <link href='static/style.css' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'> -->
+</head>
+<body>
+    <nav>
+        <a href="/signout">Logout</a>
+    </nav>  
+    <h1>"Welcome, {{ request.session.alias }}"</h1>
+    <section>
+        <div id="quote_left">
+            <fieldset class="quotables">
+                <legend>&nbsp;quotable quotes&nbsp;</legend>
+                <div id="quote_list_wrapper">
+                {% for quote in quote_list %}
+                    <fieldset class="quotes">
+                        <legend class="poster">&nbsp;posted by: <a href="/users/{{ quote.id }}">{{ quote.poster.alias }}&nbsp;</a></legend>
+                        <p>{{ quote.quotation }}</p>
+                        <p><span class="author">- {{ quote.author }}</span></p>
+                        <form action='/favorite/{{ quote.id }}' method="POST">
+                        {% csrf_token %}
+                            <input type="submit" class="small" name="favorites" value="ADD TO FAVORITES"/>  <!-- ❤ -->
+                        </form>
+                    </fieldset>
+                {% endfor %}
+                </div>
+            </fieldset>
+        </div>
+        <div id="faves-add_right">
+            <fieldset class="favorites">
+                <legend>&nbsp;your favorites&nbsp;</legend>
+                <div id="favorites_wrapper">
+                {% for quote in favorites_list %}
+                    <fieldset class="quotes">
+                        <legend class="poster">&nbsp;posted by: <a href="/users/1">{{ quote.poster.alias }}&nbsp;</a></legend>
+                        <p>{{ quote.quotation }}</p>
+                        <p><span class="author">{{ quote.author }}</span></p>
+                    </fieldset>
+                {% endfor %}
+                </div>
+            </fieldset>
+{% if messages %}
+<ul class='messages'>
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+            <fieldset class="add_quote">
+                <legend>Contribute a Quotation:</legend>
+                <form action="/post" method="POST">
+                {% csrf_token %}
+                    <p><span>Author:</span><input class="author" type="text" name="author"/></p>
+                    <p><span>Quotation:</span><textarea class="quotation" name="quotation" row="8" cols="40"></textarea></p>
+                    <input type="submit" value="S U B M I T">
+                </form>
+            </fieldset>
+        </div>
+    </section>
+</body>
+</html>

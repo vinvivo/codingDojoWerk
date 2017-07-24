@@ -1,0 +1,51 @@
+<!-- /main -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Quotes: Login</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Quotes, for Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <!-- <link href='static/style.css' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'> -->
+</head>
+<body>
+    <h1>Welcome to Quoteland</h1>
+        {% if messages %}
+        <ul class='messages'>
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    <section>
+        <fieldset class="login_reg">
+            <legend>REGISTER</legend>
+            <form action="/users" method="POST">
+            {% csrf_token %}
+                <p><span>NAME:</span><input type="text" name="name" placeholder="(at least 1 character)" required></p>
+                <p><span>USERNAME:</span><input type="text" name="alias" placeholder="(at least 1 character)" required></p>
+                <p><span>EMAIL:</span><input type="text" name="email" placeholder="(user@example.com)" required></p>
+                <p><span>PASSWORD:</span><input type="password" name="password" placeholder="(at least 8 characters long)" required></p>
+                <p><span>CONFIRM PW:</span><input type="password" name="password_conf" placeholder="(at least 8 characters)" required></p>
+                <p><span>BIRTHDATE:</span><input type="date" name="birthdate" required></p>
+                <input type="submit" value="R E G I S T E R">
+            </form>
+        </fieldset>
+        <fieldset class="login_reg">
+            <legend>LOGIN</legend>
+            <form action='/users/login', method="POST">
+                {% csrf_token %}
+                <p><span>EMAIL:</span><input type="text" name="email" required></p>
+                <p><span>PASSWORD:</span><input type="password" name="password" required></p>
+                <input type="submit" value="L O G &nbsp; I N">
+            </form>
+        </fieldset>
+    </section>
+</body>
+</html>

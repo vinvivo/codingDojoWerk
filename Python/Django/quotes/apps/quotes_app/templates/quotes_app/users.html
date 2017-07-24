@@ -1,0 +1,36 @@
+<!-- /users -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>QUOTELAND: Quotes by User</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Quotes, for Django">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <!-- <link href='static/style.css' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'> -->
+</head>
+<body>
+    <nav>
+        <a href="/quotes">Dashboard</a>  |
+        <a href="/signout">Logout</a>
+    </nav>   
+    <section>
+        <fieldset class="login_reg">
+            <legend>&nbsp;Posts by {{ poster_alias }}&nbsp;| COUNT: {{ quote_count }}</legend>
+            <div id="quote_list_wrapper">
+            {% for quote in quote_list %}
+                <fieldset class="quotes">
+                    <p>{{ quote.quotation }}</p>
+                    <p><span class="author">{{ quote.author }}</span></p>
+                </fieldset>
+            {% endfor %}
+            </div>
+        </fieldset>
+    </section>
+</body>
+</html>
