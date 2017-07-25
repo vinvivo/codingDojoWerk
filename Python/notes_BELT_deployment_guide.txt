@@ -50,7 +50,7 @@
                         chmod 400 python_belt_deploy.pem
                         ls -al
                         (from AWS, copy and paste:)
-                        ssh -i "python_belt_deploy.pem" ubuntu@ec2-52-53-216-16.us-west-1.compute.amazonaws.com
+                        ssh -i "python_belt_deploy.pem" ubuntu@ec2-54-153-55-53.us-west-1.compute.amazonaws.com
                         yes
                         sudo apt-get update
                         sudo apt-get install python-pip python-dev nginx git
@@ -76,7 +76,7 @@
     set DEBUG to False
 (right under DEBUG)
     paste the ECS public IP into ALLOWED_HOSTS -- make sure it's within single quotes!
-    ’52.53.216.16’
+    ’54.153.55.53’
 (paste the following at the end:)
     STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
@@ -120,7 +120,7 @@ sudo vim /etc/nginx/sites-available/belt_exam_07242017
 
 server {
   listen 80;
-  server_name 52.53.216.16;
+  server_name 54.153.55.53;
   location = /favicon.ico { access_log off; log_not_found off; }
   location /static/ {
       root /home/ubuntu/pythonbeltdeploy;

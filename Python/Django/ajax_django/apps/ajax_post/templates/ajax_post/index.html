@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <title>Ajax Post</title>
+        <meta charset='UTF-8'>
+        <meta name='description' content="DESCRIPTIVE_TEXT">
+        <meta name='viewport' content='width=device-width, initial-scale=1'> {% load static %}
+        <!-- <link href="{% static 'css/style.css' %}" rel='stylesheet'> -->
+        <!-- <link href='static/style.css' rel='stylesheet'> -->
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <!-- <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'> -->
+        <style>
+            fieldset {
+                display: inline-flex;
+                width: 20%;
+                margin: 2%;
+                border: 2px solid lightcoral;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            // Attach a submit handler to the #add_note form
+            $(function () {
+                $('#add_note').on('submit', (function () {
+                    $.ajax({
+                        method: "POST",
+                        url: "/notes",
+                        data: {
+                            csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+                            note: $('#note_text').val()
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            $('#all_notes').append($("<fieldset>").text(data.note));
+                        }
+                    });
+                    return false;
+                }));
+            })
+        </script>
+    </head>
+
+    <body>
+        <h1>My Posts</h1>
+        <!-- Notes posted from the form will be rendered inside this div -->
+        <div id="all_notes"></div>
+        <section>
+            <p>Add a note:</p>
+            <form id="add_note">
+                {% csrf_token %}
+                <textarea id="note_text" rows="4" cols="50" name="note" placeholder="Enter note here..." form="add_note"></textarea>
+                <br>
+                <input type="submit" value="SUBMIT" />
+            </form>
+        </section>
+
+    </body>
+
+</html>
