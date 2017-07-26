@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Ajax Notes</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="DESCRIPTIVE_TEXT">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- {% load static %} -->
+    <!-- <link href="{% static 'css/style.css' %}" rel='stylesheet'> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <style>
+        * {
+            font-family: 'Montserrat';
+        }
+        body {
+            display: flex;
+            width: 50vw;
+            flex-direction: column;
+            margin: 50px;
+        }
+        section {
+            width: 50vw;
+            display: flex;
+            justify-content: space-between;
+        }
+        fieldset {
+            width: 100%;
+            border: none;
+        }
+        textarea {
+            width: 70%;
+            height: 20vh;
+            overflow: scroll;
+            border: 1px solid lightgray;
+            font-size: 0.9em;
+        }
+        a {
+            width: 20%;
+            float: right;
+            vertical-align: top;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: royalblue;
+        }
+        hr {
+            width: 50vw;
+            text-align: left;
+            margin: 15px 0px 15px 0px;
+        }
+        input[type="text"] {
+            width: 67%;
+            font-size: 0.9em;
+            margin: 15px 0px 15px 15px;
+            border: 1px solid lightgray;
+        }
+        input[type="submit"] {
+            width: 15%;
+            display: block;
+            margin-left: 15px;
+            margin-top: 10px;
+            padding: 5px;
+            background-color: royalblue;
+            color: white;
+            font-size: 1em;
+        }
+
+    </style>
+     <script type="text/javascript">
+        $(function () {
+            $('#add_title').on('submit', (function () {
+                $.ajax({
+                    method: "POST",
+                    url: "/mynotes/post",
+                    data: {
+                        csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+                        title: $('#note_title').val()
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        $('#all_notes').append(
+                            "<legend>"+data.title+"</legend>"+"<form id=\"\"><textarea id=\"description\" name=\"description\" placeholder=\"Enter description here...\"></textarea><a href=\"/\">delete</a><hr>");
+                    }
+                });
+                return false;
+            }));
+            $( '#description' ).click(function(e) {
+                var $desc = $("#description")
+                if (!$desc.is(e.target) )
+                    $.ajax({
+                        method: "POST",
+                        url: "/mynotes/post",
+                        data: {
+                            csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+                            content: $('#description').val()
+                        },
+                        success: function(data) {
+                            console.log(data);
+                        }
+                    });
+                return false;
+            });
+        })
+    </script> 
+</head>
+<body>
+    <h2>Notes</h2>
+    <hr>
+    <section>
+        <fieldset id="all_notes"></fieldset>
+    </section>
+    <form id="add_title">
+        {% csrf_token %}
+        <input type="text" id="note_title" placeholder="Insert note title here..."/>
+        <input type="submit" value="Add Note"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!-- /dashboard displays current user's wish list items and the items on other users' wish lists-->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Make-A-Wish-LIST: Dashboard</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's belt exam for Python stack -- July 25, 2017">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <nav>
+        <a  class="endbutton" href="/signout">Logout</a>
+    </nav>  
+    <!-- views.py[30]: request.session['name'] = new_user.name OR [42]:request.session['name'] = found_user.name -->
+    <h1>Hello, {{ request.session.name }}</h1>
+    <section>
+        <h2>Your Wish List:</h2>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Added By</th>
+                        <th>Date Added</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <!-- views.py[58]:
+                        "my_wish_list": Product.objects.filter(wisher__id = request.session['session_user_id'])|Product.objects.filter(users__id = request.session['session_user_id']) -->
+                    {% for product in my_wish_list %}
+                    <tr>
+                        <td><a href="/wish_items/{{ product.id }}">{{ product.product_name }}</a></td>
+                        <td>{{ product.wisher.name }}</td>
+                        <td>{{ product.created_at|date:"M d, Y" }}</td>
+                        <td>
+                            <!-- url(r'remove_from_my_wishlist/(?P<product_id>\d+)$', views.remove_from_my_wishlist) -->
+                            {% if product.wisher.id == request.session.session_user_id %}
+                                <form action='/delete/{{ product.id }}' method="POST">
+                                    {% csrf_token %}
+                                    <input type="submit" class="tbl-button" name="delete_from_wishlist" value="delete"/>
+                                </form>
+                            {% else %}
+                                <form action='/remove_from_my_wishlist/{{ product.id }}' method="POST">
+                                {% csrf_token %}
+                                    <input type="submit" class="tbl-button" name="add_to_my_wishlist" value="remove from my wish list"/>
+                                </form>
+                            {% endif %}
+                        </td>
+                    <tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <br><br>
+        <h2>Items On Other Users' Wish Lists</h2>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Added By</th>
+                        <th>Date Added</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <!-- views.py[59]:
+                        "all_products": Product.objects.exclude(users = request.session['session_user_id']) -->
+                    {% for product in all_products %}
+                    <tr>
+                        <!-- url(r'wish_items/(?P<product_id>\d+)$', views.wish_items) -->
+                        <td><a href="/wish_items/{{ product.id }}">{{ product.product_name }}</a></td>
+                        <td>{{ product.wisher.name }}</td>
+                        <td>{{ product.created_at|date:"M d, Y" }}</td>
+                        <td>
+                            <!-- url(r'wish_items/(?P<product_id>\d+)$', views.wish_items) -->
+                            <form action='/add_to_my_wishlist/{{ product.id }}' method="POST">
+                            {% csrf_token %}
+                                <input type="submit" class="tbl-button" name="add_to_my_wishlist" value="add to my wish list"/>
+                            </form>
+                        </td>
+                    <tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <nav>
+        <!-- url(r'add_product$', views.add_product) -->
+        <a class="endbutton" href="/add_product">Add Item to Your Wish List</a>
+    </nav>
+</body>
+</html>

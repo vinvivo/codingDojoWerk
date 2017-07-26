@@ -27,7 +27,7 @@
                 $('#add_note').on('submit', (function () {
                     $.ajax({
                         method: "POST",
-                        url: "/notes",
+                        url: "/myposts/notes",
                         data: {
                             csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
                             note: $('#note_text').val()

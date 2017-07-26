@@ -3,8 +3,8 @@ from django.http import JsonResponse
 
 # Create your views here.
 def index(request):
-    return render(request, "ajax_post/index.html")
+    return render(request, 'ajax_notes/index.html')
 
-def notes(request):
+def post(request):
     print request.POST
     return JsonResponse(request.POST)

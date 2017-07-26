@@ -1,0 +1,36 @@
+<!-- /wish_items displays all users with selected item on their wish lists -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Make-A-Wish-LIST: Wish List</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's belt exam for Python stack -- July 25, 2017">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <nav>
+        <a href="/dashboard">Home</a>  |
+        <a href="/signout">Logout</a>
+    </nav> 
+    <h1></h1>
+    <section id="loginreg">
+        <fieldset class="wish_item">
+            <legend>&nbsp;{{ product_info.product_name }}&nbsp;</legend>
+                <div id="medium-text">
+                    <p>All users who have this item on their wish list:</p>
+                    <ul>
+                    {% for user in my_wish_items %}
+                        <li>{{ user.name }}</li>
+                    {% endfor %}
+                    {% for user in other_wish_items %}
+                        <li>{{ user.name }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+        </fieldset>
+    </section>
+</body>
+</html>

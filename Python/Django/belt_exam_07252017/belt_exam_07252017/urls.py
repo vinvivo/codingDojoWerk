@@ -1,4 +1,4 @@
-"""ajax_django URL Configuration
+"""belt_exam_07252017 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -17,6 +17,5 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^myposts', include('apps.ajax_post.urls')),
-    url(r'^mynotes', include('apps.ajax_notes.urls'))
+    url(r'^', include('apps.belt_exam_app.urls')),
 ]

@@ -1,0 +1,37 @@
+<!-- /create contains a form that allows user to add item to their wish list -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Make-A-Wish-LIST: Add to Wish List</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's belt exam for Python stack -- July 25, 2017">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <nav>
+        <a href="/dashboard">Home</a>  |
+        <a href="/signout">Logout</a>
+    </nav> 
+    <h1>Add an Item to Your Wish List</h1>
+        {% if messages %}
+        <ul class='messages'>
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    <section>
+        <fieldset class="add_product">
+            <!-- url(r'add_product$', views.add_product) -->
+            <form action="/add_product" method="POST">
+            {% csrf_token %}
+                <p><span>Item/ Product Name:</span><input type="text" name="product_name" required/></p>
+                <input type="submit" value="ADD">
+            </form>
+        </fieldset>
+    </section>
+</body>
+</html>
