@@ -1,0 +1,55 @@
+<!--31 July 2017
+    Assignment: JavaScript DOM I
+    Complete the appendList function. appendList should take an array of strings and the id of a <ul> element, and append all elements of the array as <li> tags.
+        <html>
+        <body>
+            <h1>Students</h1>
+            <ul id="main">
+                // this is empty
+            </ul> 
+        <script>
+            function appendList(array, id){
+                // finish this function
+            };
+            let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+            let target_id = "main";
+            appendList(students, target_id);
+        </script>   
+        </body>
+        </html>
+
+    Bonus: Create a new function called superAppend that also takes the type of element we want to append.
+        function superAppend(array, element, id){
+            // element can be p, li, h1, etc etc
+        };
+ -->
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>JS DOM I</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, JS DOM I, for MEAN-JS Fundamentals">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+</head>
+<body>
+    <p>See console for output.</p>
+    <h1>Students</h1>
+    <ul id="main">
+        <!-- this is empty -->
+    </ul> 
+<script>
+    function appendList(array, id){
+        for (let i = 0; i < array.length; i++ ) {
+            let appending = document.createElement("li");
+            appending.innerHTML = array[i];
+            document.getElementById(id).appendChild(appending);
+        }
+    };
+    let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+    let target_id = "main";
+    appendList(students, target_id);
+</script> 
+</body>
+</html>
