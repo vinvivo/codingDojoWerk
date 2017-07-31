@@ -1,0 +1,61 @@
+do/while
+    Very similar to the while loop, a do/while loop iterates before the condition is checked. Consider the below example:
+    <script>
+        let num = 6;
+        do {
+            console.log("I'm counting! The number is " + num);
+            num = num + 1;
+        }
+        while (num < 6);
+        console.log("We are done. Goodbye world!");
+    </script>
+</ do/while>
+
+
+immediately invoked function
+    <script>
+        Another type of function in JavaScript is an immediately invoked function. This is a function where the declaration immediately calls itself. While their purpose might not be clear at first, we will return to immediately invoked functions when we talk about scope. Check out the example below:
+    
+        (function(){
+            console.log("Hello world!");
+        })();
+    </script>
+</ immediate invoked function>
+
+ES6 - Arrow Functions
+    Probably the most popular feature of ES6, arrow functions are a concise way of writing anonymous functions. While they might appear to be just 'syntactic sugar', or features that make the language 'sweeter', arrow functions have some specific scoping rules that will be made clear as we move forward.
+
+    // arrow functions are anonymous functions without the 'function' keyword.
+    
+    <script>
+        let sayName4 = (name) => { console.log("Hello my name is " + name) };
+        sayName4("Dolores");
+    </script>
+</ ES6 - Arrow Functions>
+
+selecting elements by their ID
+    <script>
+        let x = document.getElementById("message").innerHTML;
+    </script>
+
+    // if we console.log(x), we can see the contents of the id="message" tag
+
+.createElement
+.appendChild
+    <html>
+    <body>
+        <ol id="fruit">
+            <li>Bananas</li>
+            <li>Oranges</li>
+            <li>Apples</li>
+        </ol>
+    <script>
+        let new_fruit = document.createElement("li");
+        // create an empty li
+        new_fruit.innerHTML = "Pears";
+        // modify it's innerHTML content with the a string
+        document.getElementById("fruit").appendChild(new_fruit);
+        // append our new DOM element to the id 'fruit'
+    </script>   
+    </body>
+    </html>

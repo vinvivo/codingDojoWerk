@@ -1,63 +1,63 @@
-                        (In project directory)
-                            pip freeze
-                            pip freeze > requirements.txt
-                            touch .gitignore
-                            code .
-                                [ in .gitignore file ]
-                                    *.pyc
-                                    venv/
-                            git init
-                            git add .
-                            git status
-                            git commit -m "initial commit"
+(In project directory)
+    pip freeze
+    pip freeze > requirements.txt
+    touch .gitignore
+    code .
+        [ in .gitignore file ]
+            *.pyc
+            venv/
+    git init
+    git add .
+    git status
+    git commit -m "initial commit"
 
-                        { at https://github.com/vinvivo?tab=repositories )
-                            Create a new repository -- NO readme
-                            python_belt-02
+{ at https://github.com/vinvivo?tab=repositories )
+    Create a new repository -- NO readme
+    searchparty
 
-                        (back in Terminal)
-                            git remote add origin https://github.com/vinvivo/python_belt-02.git
-                            git push -u origin master
+(back in Terminal)
+    git remote add origin https://github.com/vinvivo/searchparty.git
+    git push -u origin master
 
-                        ( at https://us-west-1.console.aws.amazon.com/console/home?region=us-west-1# )
-                        ( Under AWS services, expand "All services" )
-                        ( click on EC2 )
-                        ( Click on Launch Instance )
-                        (Step 1: Select Ubuntu Server 16.04... )
-                        (Step 2: Stay with the default (free) choice and click "Next: Configure Instance Details" )
-                        (Step 3: Stay with the default (free) choice and click "Next: Add Storage" )
-                        (Step 4: Stay with the default (free) choice and click "Next: Add Tags" )
-                        (Step 5: Stay with the default (free) choice and click "Next: Configure Security Group" )
-                        (Step 6: Configure Security Group )
-                            Keep SSH on port 22
-                            "Add Rule" for HTTP on port 80
-                            Click Review and Launch
-                        (Step 7: Review Instance Launch)
-                            Click "Launch"
-                        (Step 8: Select an existing key pair or create a new key pair)
-                            Select "Create a new key pair"
-                            Type in something:  pythonBelt02.pem
-                            Download Key Pair and save it to your pem keys folder (if you have one)
-                            Launch Instance
-                        (View Instances)
-                        (Connect)
-                        (copy/paste these links into the Terminal in the next steps)
+( at https://us-west-1.console.aws.amazon.com/console/home?region=us-west-1# )
+( Under AWS services, expand "All services" )
+( click on EC2 )
+( Click on Launch Instance )
+(Step 1: Select Ubuntu Server 16.04... )
+(Step 2: Stay with the default (free) choice and click "Next: Configure Instance Details" )
+(Step 3: Stay with the default (free) choice and click "Next: Add Storage" )
+(Step 4: Stay with the default (free) choice and click "Next: Add Tags" )
+(Step 5: Stay with the default (free) choice and click "Next: Configure Security Group" )
+(Step 6: Configure Security Group )
+    Keep SSH on port 22
+    "Add Rule" for HTTP on port 80
+    Click Review and Launch
+(Step 7: Review Instance Launch)
+    Click "Launch"
+(Step 8: Select an existing key pair or create a new key pair)
+    Select "Create a new key pair"
+    Type in something:  pythonBelt02.pem
+    Download Key Pair and save it to your pem keys folder (if you have one)
+    Launch Instance
+(View Instances)
+(Connect)
+(copy/paste these links into the Terminal in the next steps)
 
-                        (back in Terminal)
-                            cd ~/Desktop/aws_pem_keys
-                            ls -al
-                            (from AWS, copy and paste:)
-                            chmod 400 python_deploy_please.pem
-                            ls -al
-                            (from AWS, copy and paste:)
-                            ssh -i "python_deploy_please.pem" ubuntu@ec2-54-183-219-120.us-west-1.compute.amazonaws.com
-                            yes
-                            sudo apt-get update
-                            sudo apt-get install python-pip python-dev nginx git
-                            Y
-                            sudo apt-get update
-                            sudo pip install virtualenv
-                            pwd
+(back in Terminal)
+    cd ~/Desktop/aws_pem_keys
+    ls -al
+    (from AWS, copy and paste:)
+    chmod 400 searchparty_key.pem
+    ls -al
+    (from AWS, copy and paste:)
+    ssh -i "searchparty_key.pem" ubuntu@ec2-54-183-214-188.us-west-1.compute.amazonaws.com
+    yes
+    sudo apt-get update
+    sudo apt-get install python-pip python-dev nginx git
+    Y
+    sudo apt-get update
+    sudo pip install virtualenv
+    pwd
 (make sure you're in the home/ubuntu directory)
 
 
@@ -77,8 +77,8 @@
 
 
 
-    git clone https://github.com/vinvivo/python_belt-02.git
-    cd python_belt-02
+    git clone https://github.com/vinvivo/searchparty.git
+    cd searchparty
     ls
     virtualenv venv
     ls
@@ -87,14 +87,14 @@
     pip list
     pip install django bcrypt django-extensions
     pip install gunicorn
-    cd belt_exam_07252017
+    cd uploads
     ls
     sudo vim settings.py
 (navigate with arrow keys to DEBUG)
     set DEBUG to False
 (right under DEBUG)
     paste the ECS public IP into ALLOWED_HOSTS -- make sure it's within single quotes!
-    '54.183.219.120'
+    '54.183.214.188'
 (paste the following at the end:)
     STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
@@ -102,7 +102,7 @@
     cd ..
     python manage.py collectstatic
     yes
-    gunicorn --bind 0.0.0.0:8000 belt_exam_07252017.wsgi:application
+    gunicorn --bind 0.0.0.0:8000 uploads.wsgi:application
 (if successful, should see four lines starting with date)
     Ctrl+C
     deactivate
@@ -116,8 +116,8 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/python_belt-02
-ExecStart=/home/ubuntu/python_belt-02/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/python_belt-02/belt_exam_07252017.sock belt_exam_07252017.wsgi:application
+WorkingDirectory=/home/ubuntu/searchparty
+ExecStart=/home/ubuntu/searchparty/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/searchparty/uploads.sock uploads.wsgi:application
 [Install]
 WantedBy=multi-user.target
 
@@ -132,20 +132,20 @@ WantedBy=multi-user.target
 
 (copy and paste + edit the following text )
 
-sudo vim /etc/nginx/sites-available/belt_exam_07252017
+sudo vim /etc/nginx/sites-available/uploads
 
 (copy and paste + edit the following text -- replace {{yourEC2.public.ip}} and {{myRepoName}} and {{projectName}} )
 
 server {
   listen 80;
-  server_name 54.183.219.120;
+  server_name 54.183.214.188;
   location = /favicon.ico { access_log off; log_not_found off; }
   location /static/ {
-      root /home/ubuntu/python_belt-02;
+      root /home/ubuntu/searchparty;
   }
   location / {
       include proxy_params;
-      proxy_pass http://unix:/home/ubuntu/python_belt-02/belt_exam_07252017.sock;
+      proxy_pass http://unix:/home/ubuntu/searchparty/uploads.sock;
   }
 }
 
@@ -156,7 +156,7 @@ server {
     :wq
 
 (replace the placeholders below before copy/pasting into Terminal -- KEEP THE SPACE!)
-    sudo ln -s /etc/nginx/sites-available/belt_exam_07252017 /etc/nginx/sites-enabled
+    sudo ln -s /etc/nginx/sites-available/uploads /etc/nginx/sites-enabled
     sudo nginx -t
     sudo rm /etc/nginx/sites-enabled/default
     sudo service nginx restart
