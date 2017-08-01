@@ -1,0 +1,136 @@
+<!-- 
+    Assignment: Ninja Class III
+    Part I
+    Recreate the base Ninja class from scratch using ES6 classes. Your Ninja needs the following attributes:
+        name
+        health
+        speed
+        strength
+    Speed and strength should be 3 by default. Health should be 100 by default.
+
+    The Ninja class should have the following methods:
+        sayName() - This should log that Ninja's name to the console.
+        showStats() - This should show the Ninja's Strength and Speed, as well as their health.
+        drinkSake() - This should add +10 Health to the Ninja
+
+    Part II - Sensei Class
+    Extend the Ninja class and create the Sensei class. A Sensei should have 200 Health, 10 speed, and 10 strength by default. In addition, a Sensei should have a new attribute called wisdom, and the default should be 10. Finally, add the speakWisdom() method. speakWisdom() should call the drinkSake() method from the Ninja class, before console.logging a wise message.
+        // example output
+        let super_sensei = new Sensei("Master Splinter");
+        super_sensei.speakWisdom();
+        // -> "What one programmer can do in one month, two programmers can do in two months."
+        super_sensei.showStats();
+        // -> "Name: Master Splinter, Health: 210, Speed: 10, Strength: 10"
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Ninja Class III</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Ninja Class III, for MEAN-JS Fundamentals">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link href='static/style.css' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+</head>
+<body>
+
+<script>
+    class Ninja {
+        constructor(ninja_name) {
+            this.speed = 3;
+            this.strength = 3;
+            this.name = ninja_name;
+            this.health = 100;
+        }
+        sayName() {
+            console.log(`My ninja name is ${this.name}`);
+            return this;
+        }
+        showStats() {
+            console.log(`Ninja Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}`);
+            return this;
+        }
+        drinkSake() {
+            this.health += 10;
+            console.log(`${this.name} drank sake responsibly and gained 10 health points!`)
+            return this;
+        }
+    }
+
+    class Sensei extends Ninja {
+        constructor(ninja_name) {
+            super(ninja_name);
+            this.health = 200;
+            this.speed = 10;
+            this.strength = 10;
+            this.wisdom = 10;
+        }
+        sayName() {
+            console.log(`My sensei name is ${this.name}`);
+            return this;
+        }
+        showStats() {
+            console.log(`Sensei Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}`)
+        }
+        speakWisdom() {
+            super.drinkSake();
+            console.log("...and these words slurred out of his mouth, \"We are what we repeatedly do. Excellence, then, is not an act but a habit.\"");
+            return this;
+        }
+    }
+
+    // function Ninja(ninja_name) {
+    //     var self = this;
+    //     var speed = 3;                  // private variable
+    //     var strength = 3;               // private variable
+    //     this.name = ninja_name;
+    //     this.health = 100;
+    //     this.sayName = function() {
+    //         console.log("My ninja name is " + this.name);
+    //         return this;
+    //     }
+    //     this.showStats = function() {
+    //         console.log("Ninja Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength)
+    //         return this;
+    //     }
+    //     this.drinkSake = function() {
+    //         this.health += 10;
+    //         return this;
+    //     }
+    //     Ninja.prototype.punch = function(other_ninja) {
+    //         if (other_ninja instanceof Ninja) {
+    //             other_ninja.health -= 5;
+    //             console.log(other_ninja.name + " was punched by " + this.name + " and lost 5 health points!");
+    //             return this;
+    //         }
+    //     }
+    //     Ninja.prototype.kick = function(other_ninja) {
+    //         if (other_ninja instanceof Ninja) {
+    //                         var kick_damage = 15 * strength;
+    //         other_ninja.health -= kick_damage;
+    //         console.log(other_ninja.name + " was kicked by " + this.name + " and lost " + kick_damage + " health points!");
+    //         return this;
+    //         }
+    //     }
+    // }
+
+    // test cases
+    let ninja1 = new Ninja("Hyabusa");
+    ninja1.sayName();
+    ninja1.showStats().drinkSake().showStats();
+
+    // let blue_ninja = new Ninja("Goemon");
+    // let red_ninja = new Ninja("Bill Gates");
+    // blue_ninja.showStats();
+    // red_ninja.punch(blue_ninja);
+    // blue_ninja.showStats();
+
+    // red_ninja.showStats();
+    // blue_ninja.kick(red_ninja);
+    // red_ninja.showStats();
+
+    let super_sensei = new Sensei("Vinney-san");
+    super_sensei.speakWisdom().showStats();
+</script>
+</body>
+</html>
