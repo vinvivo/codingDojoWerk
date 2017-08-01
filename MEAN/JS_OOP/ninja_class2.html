@@ -1,0 +1,108 @@
+<!-- 
+    Assignment: Ninja Class
+    Create a new class called Ninja with the following attributes:
+        name
+        health
+        speed (private)
+        strength (private)
+
+    Speed and strength should be 3 by default. Health should be 100 by default.
+
+    The Ninja class should have the following methods:
+        sayName() - This should log that Ninja's name to the console.
+        showStats() - This should show the Ninja's Strength and Speed, as well as their health.
+        drinkSake() - This should add +10 Health to the Ninja
+
+    Example Outputs
+        var ninja1 = new Ninja("Hyabusa");
+        ninja1.sayName();
+        // -> "My ninja name is Hayabusa!"
+
+        ninja1.showStats();
+        // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+
+
+    Assignment: Ninja Class II
+    Complete the below challenges using the Ninja Class from the previous assignment.
+
+    .punch()
+    Add a new method to your Ninja class called .punch(). This method will take another Ninja instance and subtract 5 Health from the Ninja we passed in. Your .punch() should display a console message like the below example.
+        var blue_ninja = new Ninja("Goemon");
+        var red_ninja = new Ninja("Bill Gates");
+        red_ninja.punch(blue_ninja);
+        // -> "Goemon was punched by Bill Gates and lost 5 Health!"
+
+    .kick()
+    Now add a method to your Ninja class called .kick(). Kick will subtract 15 Health for each point of Strength the calling Ninja has, and like .punch() will take another Ninja instance.
+        blue_ninja.kick(red_ninja);
+        // -> "Bill Gates was kicked by Goemon and lost 15 Health!"
+
+    Validations
+    Update .punch() and .kick() so that they only accept Instances of the Ninja class. Hint: You will need to find a way to check the constructor of an instance. You will often need to consult outside documentation to find solutions for particular features.
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Ninja Class I</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Ninja Class I, for MEAN-JS Fundamentals">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link href='static/style.css' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+</head>
+<body>
+
+<script>
+    function Ninja(ninja_name) {
+        var self = this;
+        var speed = 3;                  // private variable
+        var strength = 3;               // private variable
+        this.name = ninja_name;
+        this.health = 100;
+        this.sayName = function() {
+            console.log("My ninja name is " + this.name);
+            return this;
+        }
+        this.showStats = function() {
+            console.log("Ninja Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength)
+            return this;
+        }
+        this.drinkSake = function() {
+            this.health += 10;
+            return this;
+        }
+        Ninja.prototype.punch = function(other_ninja) {
+            if (other_ninja instanceof Ninja) {
+                other_ninja.health -= 5;
+                console.log(other_ninja.name + " was punched by " + this.name + " and lost 5 health points!");
+                return this;
+            }
+        }
+        Ninja.prototype.kick = function(other_ninja) {
+            if (other_ninja instanceof Ninja) {
+                            var kick_damage = 15 * strength;
+            other_ninja.health -= kick_damage;
+            console.log(other_ninja.name + " was kicked by " + this.name + " and lost " + kick_damage + " health points!");
+            return this;
+            }
+        }
+    }
+
+    // test cases
+    var ninja1 = new Ninja("Hyabusa");
+    ninja1.sayName();
+    ninja1.showStats();
+    ninja1.showStats().drinkSake().showStats();
+
+    var blue_ninja = new Ninja("Goemon");
+    var red_ninja = new Ninja("Bill Gates");
+    blue_ninja.showStats();
+    red_ninja.punch(blue_ninja);
+    blue_ninja.showStats();
+
+    red_ninja.showStats();
+    blue_ninja.kick(red_ninja);
+    red_ninja.showStats();
+</script>
+</body>
+</html>
