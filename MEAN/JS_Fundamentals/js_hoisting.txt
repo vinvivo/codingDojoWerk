@@ -1,0 +1,86 @@
+Assignment: JavaScript Hoisting
+    Predict the output of the following snippets. Do not plug these into the interpreter.
+
+Note
+    Even if let and const prevent a lot of the confusing behavior of JavaScript's hoisting, these are ES6 constructs and a huge amount of world's live JavaScript code is still ES5. Understanding how ES5 hoists var and the rules of scoping are important for every JavaScript developer!
+
+    1
+        console.log(hello);
+        var hello = "world";            // the declaration gets hoisted to the top without its definition
+        
+        > not defined
+
+    2
+        var needle = "haystack";
+        test();
+
+        function test(){                // this function gets hoisted to the top
+            var needle = "magnet";
+            console.log(needle);
+        }
+        
+        > magnet
+
+    3
+        var brendan = "super cool";
+        function print(){
+            brendan = "only okay";
+            console.log(brendan);
+        }                               // this function is never called
+        console.log(brendan);
+
+        > super cool
+
+    4
+        var food = "chicken";
+        console.log(food);
+        eat();
+        function eat(){                 // this function is hoisted up before eat() is run
+            food = "half-chicken";
+            console.log(food);
+            var food = "gone";
+        }
+
+        > chicken
+        > half-chicken
+
+    5
+        mean();                         // mean function is undefined
+        console.log(food);              // undefined
+        var mean = function() {         // this function is hoisted before mean()
+            food = "chicken";           // food is undefined
+            console.log(food);          // food is undefined
+            var food = "fish";          
+            console.log(food);          // valid
+        }
+        console.log(food);              // food is not defined in this scope
+        
+        > undefined
+
+    6
+        console.log(genre);             // ReferenceError
+        var genre = "disco";            // this genre declaration is hoisted
+        rewind();
+        function rewind() {
+            genre = "rock";
+            console.log(genre);
+            var genre = “r&b";
+            console.log(genre);
+        }
+        console.log(genre);
+
+        > undefined
+
+    7
+        dojo = “san jose";              // variable is initialized but not defined
+        console.log(dojo);              //ReferenceError
+        learn();
+        function learn() {
+            dojo = "seattle";
+            console.log(dojo);
+            var dojo = "burbank";
+            console.log(dojo);
+        }
+        console.log(dojo);
+
+        > undefined
