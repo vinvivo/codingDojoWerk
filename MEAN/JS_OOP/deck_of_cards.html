@@ -28,74 +28,52 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- <link href='static/style.css' rel='stylesheet'> -->
     <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
-</head>
-<body>
-    <p>See console.</p>
-<script>
-    class Card {
-        constructor (rank, suit) {
-            this.rank = rank;
-            this.suit = suit;
+<script type="text/javascript">
+    class Deck {
+        constructor() {
+            this.deck = [];
         }
-        to_string() {
-            return `${this.rank} of ${this.suit}`
-        }
-    }
-    function Deck() {
-        let cards = [];
 
-        this.reset = () => {
-            cards = [];
+        reset() {
+            this.deck = [];
+            let suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
+            let values = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
 
-            let ranks = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
-            let suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
-
-            for (let suit of suits) {
-                for (let rank of ranks) {
-                    cards.push(new Card(rank, suit));
+            for (let suit in suits) {
+                for (let value in values) {
+                    this.deck.push(values[value] + " of " + suits[suit]);
                 }
-            }
-        }
-
-        this.shuffle = () => {
-            /* This method performs a Fisher-Yates shuffle in place */
-            let m = cards.length, temp, i;   // ES6 allows declaration of multiple variables in one line
-
-            // While there are remaining to be shuffled
-            while(m) {
-                i = Math.floor(Math.random() * m--);
-            // classic swap algorithm
-            temp = cards[m];
-            cards[m] = cards[i];
-            cards[i] = temp;
             }
             return this;
         }
 
-        this.deal = () => {
-            return cards.pop();
+        shuffle() {
+            /* This method performs a Fisher-Yates shuffle in place */
+            let m = this.deck.length, temp, i;   // ES6 allows declaration of multiple variables in one line
+
+            // While there are remaining to be shuffled
+            while(m) {
+                i = Math.floor(Math.random() * m--);
+                // classic swap algorithm
+                temp = this.deck[m];
+                this.deck[m] = this.deck[i];
+                this.deck[i] = temp;
+            }
+            return this;
         }
-        this.reset;
-        this.shuffle();
+
+        deal() {
+            return this.deck.pop();
+        }
     }
-    //test case
-    let new_deck = new Deck();
-    new_deck.reset();
-    new_deck.shuffle();
-    console.log(new_deck.deal().to_string());
-    console.log(new_deck.deal().to_string());
-    console.log(new_deck.deal().to_string());
 
     class Player {
         constructor(player_name) {
             this.name = player_name;
             this.hand = [];
         }
-        takeCard() {
-            let my_deck = new Deck();
-            my_deck.reset();
-            my_deck.shuffle();
-            this.hand.push(my_deck.deal());
+        drawCard(deck) {
+            this.hand.push(deck.deal());
             return this;
         }
         showHand() {
@@ -107,11 +85,19 @@
             return this;
         }
     }
-    // test case
-    let player1 = new Player("Vinney");
-    player1.takeCard().takeCard().showHand().discard().showHand();
 
+    //test case
+    let new_deck = new Deck();
+    new_deck.reset().shuffle();
+    console.log(new_deck);
+
+    let player1 = new Player("Vinney");
+    player1.drawCard(new_deck).drawCard(new_deck);
+    console.log(player1);
 
 </script>
+</head>
+<body>
+    <p>See console.</p>
 </body>
 </html>
