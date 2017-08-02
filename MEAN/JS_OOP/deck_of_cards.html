@@ -1,0 +1,117 @@
+<!-- 
+    Assignment: Deck of Cards
+    Create a Deck class. A deck should have the following functionality:
+        The Deck should contain the 52 standard cards
+        The Deck should be able to shuffle <https://bost.ocks.org/mike/shuffle/>
+        The Deck should be able to reset
+        The Deck should be able to deal a random card
+        Deal should return the card that was dealt and remove it from the deck
+
+    Now create a Player class. A Player should have the following functionality:
+        The Player should have a name
+        The Player should have a hand
+        The Player should be able to take a card (use the deck.deal method)
+        The Player should be able to discard a card
+    
+    Optional:
+        Create a blackjack game with your deck of cards!
+    A deck of card image set can be found here: <http://s3.amazonaws.com/General_V88/boomyeah/company_209/chapter_3303/handouts/chapter3303_4963_cards-png.zip>
+
+    Or Unicode them Unicode for card images! <https://en.wikipedia.org/wiki/Playing_cards_in_Unicode>
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Deck of Cards: MEAN</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Deck of Cards: MEAN, for MEAN-JS Fundamentals">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link href='static/style.css' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+</head>
+<body>
+    <p>See console.</p>
+<script>
+    class Card {
+        constructor (rank, suit) {
+            this.rank = rank;
+            this.suit = suit;
+        }
+        to_string() {
+            return `${this.rank} of ${this.suit}`
+        }
+    }
+    function Deck() {
+        let cards = [];
+
+        this.reset = () => {
+            cards = [];
+
+            let ranks = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
+            let suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
+
+            for (let suit of suits) {
+                for (let rank of ranks) {
+                    cards.push(new Card(rank, suit));
+                }
+            }
+        }
+
+        this.shuffle = () => {
+            /* This method performs a Fisher-Yates shuffle in place */
+            let m = cards.length, temp, i;   // ES6 allows declaration of multiple variables in one line
+
+            // While there are remaining to be shuffled
+            while(m) {
+                i = Math.floor(Math.random() * m--);
+            // classic swap algorithm
+            temp = cards[m];
+            cards[m] = cards[i];
+            cards[i] = temp;
+            }
+            return this;
+        }
+
+        this.deal = () => {
+            return cards.pop();
+        }
+        this.reset;
+        this.shuffle();
+    }
+    //test case
+    let new_deck = new Deck();
+    new_deck.reset();
+    new_deck.shuffle();
+    console.log(new_deck.deal().to_string());
+    console.log(new_deck.deal().to_string());
+    console.log(new_deck.deal().to_string());
+
+    class Player {
+        constructor(player_name) {
+            this.name = player_name;
+            this.hand = [];
+        }
+        takeCard() {
+            let my_deck = new Deck();
+            my_deck.reset();
+            my_deck.shuffle();
+            this.hand.push(my_deck.deal());
+            return this;
+        }
+        showHand() {
+            console.log(this.hand);
+            return this;
+        }
+        discard() {
+            this.hand.pop();
+            return this;
+        }
+    }
+    // test case
+    let player1 = new Player("Vinney");
+    player1.takeCard().takeCard().showHand().discard().showHand();
+
+
+</script>
+</body>
+</html>
