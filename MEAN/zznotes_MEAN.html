@@ -59,3 +59,27 @@ selecting elements by their ID
     </script>   
     </body>
     </html>
+
+
+
+<!-- ___________________________________ NODE ___________________________________ -->
+    if(request.url === '/') {
+        fs.readFile('index.html', 'utf8', function (errors, contents){
+            response.writeHead(200, {'Content-Type': 'text/html'});  // send data about response
+            response.write(contents);  //  send response body
+            response.end(); // finished!
+        });
+    }
+
+Use the following table to figure out which headers to send with your server's responses:
+File type:	    Headers:
+HTML	        {'Content-Type': 'text/html'}
+CSS	            {'Content-Type': 'text/css'}
+Javascript	    {'Content-Type': 'text/javascript'}
+png/jpeg/gif	{'Content-Type': 'image/*'} (* is the image format, ie png or jpeg etc)
+
+
+
+
+
+
