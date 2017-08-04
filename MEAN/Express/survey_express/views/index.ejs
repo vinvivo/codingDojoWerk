@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Survey: Express</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, Survey: Express, for MEAN">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='style.css' rel='stylesheet'> 
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <style>
+        * { font-family: 'Source Sans Pro', sans-serif; }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <section>
+        <fieldset>
+            <legend>Survey</legend>
+            <form action="/result" method="POST">
+                <p><span>Your Name:</span><input type="text" name="name" placeholder="Name"></p>
+                <p><span>Dojo Location:</span>
+                    <select name="location">
+                        <option value="San Jose">San Jose</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Berkeley">Berkeley</option>
+                    </select>
+                </p>
+                <p><span>Favorite Language:</span>
+                    <select name="language">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="English">English</option>
+                        <option value="Python">Python</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Spanish">Spanish</option>
+                    </select>
+                </p>
+                <p><span>Comment:</span><textarea name="comments"></textarea></p>
+                <input type="submit" value="Submit">
+            </form>
+        </fieldset>
+    </section>
+</body>
+</html>
