@@ -1,0 +1,86 @@
+(1) Create a database called 'my_first_db'
+    > use my_first_db
+    switched to db my_first_db
+
+(2) Create student collection.
+    > db.students.insertOne( { x: 1 } );
+    {
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5988c34755585e7308d2b0c1")
+    }
+
+    > show collections
+    students
+
+(4) Create 5 students with the appropriate info.
+    > try { db.students.insertMany( [ { name: "Vinney", home_state: "CA", lucky_number: 2, birthday: {month: 2, day: 2, year: 1992} }, { name: "Imron", home_state: "CA", lucky_number: 7, birthday: {month: 7, day: 7, year: 1997} }, { name: "Ethan", home_state: "CA", lucky_number: 5, birthday: {month: 5, day: 5, year: 1997} }, { name: "Lucy", home_state: "CA", lucky_number: 8, birthday: {month: 8, day: 8, year: 1998} } ] ); } catch (e) { print(e); }
+    {
+        "acknowledged" : true,
+        "insertedIds" : [
+            ObjectId("5988c83b55585e7308d2b0c2"),
+            ObjectId("5988c83b55585e7308d2b0c3"),
+            ObjectId("5988c83b55585e7308d2b0c4"),
+            ObjectId("5988c83b55585e7308d2b0c5")
+        ]
+    }
+
+(5) Get all students
+    > db.students.find()
+
+(6) Retrieve all students who are from California (San Jose Dojo) or Washington (Seattle Dojo)
+    > db.students.find({ $or: [ {home_state: "CA"}, {home_state: "WA"} ] })
+
+(7) Get all students whose lucky number is:
+    -   greater than 3
+        > db.students.find({ lucky_number: {$gt: 3} }).pretty()
+
+    -   less than or equal to 10
+        > db.students.find({ lucky_number: {$lte: 10} }).pretty()
+
+    -   between 1 and 9 (inclusive)
+        > db.students.find({ lucky_number: {$gte: 1}, lucky_number: {$lte: 9} }).pretty()
+
+(8) Add a field to each student collection called 'interests' that is an ARRAY.  It should contain the following entries: 'coding', 'brunch', 'MongoDB'. Do this in ONE operation.
+    > db.students.updateMany( {}, { $set: {"interests": ["coding", "brunch", "MongoDB" ]} } )
+
+(9) Add some unique interests for each particular students into each of their interest arrays.
+    > db.students.updateOne( {name: "Vinney"}, {$addToSet: {"interests": "art"} } )
+        { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+    > db.students.updateOne( {name: "Imron"}, {$addToSet: {"interests": "volleyball"} } )
+        { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+    > db.students.updateOne( {name: "Ethan"}, {$addToSet: {"interests": "sales"} } )
+        { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+    > db.students.updateOne( {name: "Lucy"}, {$addToSet: {"interests": "dance"} } )
+        { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+(10) Add the interest 'taxes' into someone's interest array.
+    > db.students.updateOne( {name: "Lucy"}, {$addToSet: {"interests": "taxes"} } )
+        { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+(11) Remove the 'taxes' interest you just added.
+    > db.students.update( {name: "Lucy"}, {$pull: {interests: "taxes"} } )
+
+(12) Remove all students who are from California (or Washington).
+    > db.students.deleteMany({ home_state: "CA" })
+
+(13) Remove a student by name.
+    > db.students.deleteOne({ name: "Vinney" })
+
+(14) Remove a student whose lucky number is greater than 5 (JUST ONE)
+    > db.students.deleteOne({ lucky_number: {$gt: 5} })
+
+(15) Add a field to each student collection called 'number_of_belts' and set it to 0.
+    > db.students.updateMany( {}, { $set: { "number_of_belts": 0 } } )
+
+(16) Increment this field by 1 for all students in Washington (Seattle Dojo)
+    > db.students.updateMany( {home_state: "WA"}, { $inc: { "number_of_belts": 1 } } )
+
+(17) Rename the 'number_of_belts' field to 'belts_earned'
+    > db.stuents.updateMany( {}, { $rename: { "number_of_belts": "belts_earned" } })
+
+(18) Remove the "lucky_number" field.
+    > db.students.updateMany( {}, { $unset: { lucky_number: "" } } )
+
+(19) Add an 'updated_on' field, and set the value as the current date.
+    > db.students.updateMany( {}, { $currentDate: { updated_on: true }})
+
