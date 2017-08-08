@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <title>QuotingDojo</title>
+        <meta charset='UTF-8'>
+        <meta name='description' content="Vinney's practice assignment, QuotingDojo, for MEAN">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='style.css' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+        <style>
+            * {
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+        </style>
+        <script>
+
+        </script>
+    </head>
+
+    <body>
+        <h1>Welcome to Quoting Dojo</h1>
+        <section>
+            <% if( typeof(errors) != 'undefined' ) { %>
+                <% for (var x in errors) { %>
+                    <h2><%= errors[x].message %></h2>
+                <% } %>
+            <% } %>
+            <form action="/quotes" method="POST">
+                <p><span>Your name:</span><input type="text" name="name" placeholder="Name" /></p>
+                <p><span>Your quote:</span><textarea name="quotation"></textarea></p>
+                <input type="submit" value="Add my quote!">
+                <a class="endbutton" href="/quotes">Skip to quotations!</a>
+            </form>
+        </section>
+    </body>
+
+</html>

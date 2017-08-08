@@ -105,6 +105,25 @@ CREATE - Inserting a document into a collection:
         db.COLLECTION_NAME.insert({YOUR_JSON_DOCUMENT})
     // Example:
         db.ninjas.insert({name: "Trey", belt: "black", status: "awesome"})
+    // Alternative syntax:
+        db.students.insertOne(
+            {
+                name: "sue",
+                age: 26,
+                status: "pending"
+            }
+        )
+
+        OR 
+try {
+    db.COLLECTION.insertMany( [
+        { name: "NAME", home_state: "STRING", lucky_number: NUM, birthday: {month: NUM, day: NUM, year: NUM} },
+        { name: "NAME", home_state: "STRING", lucky_number: NUM, birthday: {month: NUM, day: NUM, year: NUM} },
+        { name: "NAME", home_state: "STRING", lucky_number: NUM, birthday: {month: NUM, day: NUM, year: NUM} }
+    ] );
+} catch (e) {
+    print (e);
+}
 
 
 READ - Retrieving documents from a collection:

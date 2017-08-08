@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>QuotingDojo</title>
+    <meta charset='UTF-8'>
+    <meta name='description' content="Vinney's practice assignment, QuotingDojo, for MEAN">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='style.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <style>
+        * { font-family: 'Source Sans Pro', sans-serif; }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <h1>Here are the awesome quotations</h1>
+        <section>
+            <div class="scrollcontent">
+                <% for (var i in user) { %>
+                    <p>"<%= user[i].quotation %>"</p>
+                    <p>--<%= user[i].name %></p>
+                    <hr>
+                <% } %>
+            </div class="scrollcontent">
+            <br>
+            <a class="endbutton" href="/">Add a quotation</a>
+        </section>
+</body>
+</html>

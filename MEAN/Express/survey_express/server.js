@@ -26,9 +26,9 @@ app.get('/results', function (req, res) {
         location: req.session.location,
         language: req.session.language,
         comments: req.session.comments,
-    }
+    };
     res.render('results', context);
-})
+});
 
 app.use(express.static(__dirname + "/static"));
 
