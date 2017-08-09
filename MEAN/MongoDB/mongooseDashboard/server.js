@@ -1,7 +1,8 @@
-var express     = require("express"),   // require express and path
-    path        = require("path"),
-    app         = express(),                // create the express app
-    bodyParser  = require("body-parser");   /* require bodyParser to handle
+// Mongoose Dashboard - modular
+var express = require("express");   // require express and path
+var path = require("path");
+var app = express();                // create the express app
+var bodyParser = require("body-parser");    /* require bodyParser to handle
                                                post data */
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './client/static')));  // where to get static content

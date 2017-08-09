@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <title>Direwolf Info</title>
+        <meta charset='UTF-8'>
+        <meta name='description' content="Vinney's practice assignment, Direwolf Dashboard, for MEAN">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='style.css' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+        <style>
+            * {
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+        </style>
+
+    </head>
+
+    <body>
+            <h1><%= wolf.name %></h1>
+                <hr>
+                <p><span>Name:</span><%= wolf.name %></p>
+                <p><span>Owner:</span><%= wolf.owner %></p>
+                <p><span>Living?:</span><%= wolf.living %></p>
+                <hr>
+                <a class="endbutton" href="/">Go Back</a>
+                <a class="endbutton" href="/direwolves/edit/<%= wolf.id %>">Edit</a>
+                <a class="endbutton" href="/direwolves/destroy/<%= wolf.id %>">Delete</a>
+    </body>
+
+</html>

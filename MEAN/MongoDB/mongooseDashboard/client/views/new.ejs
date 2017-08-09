@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <title>Add a Direwolf</title>
+        <meta charset='UTF-8'>
+        <meta name='description' content="Vinney's practice assignment, Direwolf Dashboard, for MEAN">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='style.css' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+        <style>
+            * {
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1>Add a direwolf</h1>
+        <section>
+            <% if( typeof(errors) != 'undefined' ) { %>
+                <% for (var x in errors) { %>
+                    <h2>
+                        <%= errors[x].message %>
+                    </h2>
+                <% } %>
+            <% } %>
+            <form action="/direwolves" method="POST">
+                <p><span>Wolf name:</span><input type="text" name="name" placeholder="Wolf name" /></p>
+                <p><span>Owner name:</span><input type="text" name="owner" placeholder="Owner name" /></p>
+                <p>
+                    <span>Living status:</span>
+                    <input type="radio" id="true" name="living" value="true">
+                    <label for="true">Yes</label>
+                    <input type="radio" id="false" name="living" value="true">
+                    <label for="false">No</label>
+                </p>
+                <input type="submit" value="Submit">
+                <a class="endbutton" href="/">Go Back</a>
+            </form>
+        </section>
+    </body>
+
+</html>

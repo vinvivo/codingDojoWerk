@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <title>Direwolf Dashboard</title>
+        <meta charset='UTF-8'>
+        <meta name='description' content="Vinney's practice assignment, Direwolf Dashboard, for MEAN">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='style.css' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+        <style>
+            * {
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1>Direwolves of Game of Thrones</h1>
+        <section>
+            <div class="scrollcontent">
+                <% for (i in wolf) { %>
+                    <p><span>Name:</span><a href="/direwolves/<%= wolf[i].id %>"><%= wolf[i].name %></a></p>
+                    <p><span>Owner:</span><%= wolf[i].owner %></p>
+                    <p><span>Living?:</span><%= wolf[i].living %></p>
+                    <hr>
+                <% } %>
+            </div class="scrollcontent">
+            <br>
+            <a class="endbutton" href="/new">Add a wolf</a>
+        </section>
+    </body>
+
+</html>
