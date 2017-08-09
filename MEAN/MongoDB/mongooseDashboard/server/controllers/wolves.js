@@ -16,11 +16,13 @@ module.exports = {
         });
     },
     showByID: function(req, res) {
-        Wolf.find( {_id: req.params.id}, function(errors, data) {
+        Wolf.findOne( {_id: req.params.id}, function(errors, data) {
             if(errors) {
+                console.log(data);
                 console.log(errors);
             } else {
-                res.render('wolves', { wolf: data[0] });
+                console.log(data);
+                res.render('wolves', { wolf: data });
             }
         });
     },
@@ -42,31 +44,35 @@ module.exports = {
             }
         });
     },
-    edit: function(req, res) {
-        var wolfUpdate = Wolf.updateOne(
-            { _id: req.params.id },
-            { $set: { name : req.body.name,
-                      owner: req.body.owner,
-                      living: req.body.living
-                    }
+    showEdit: function(req, res) {
+        Wolf.findOne( {_id: req.params.id}, function(errors, data) {
+            if(errors) {
+                console.log(data);
+                console.log(errors);
+            } else {
+                console.log(data);
+                res.render('edit', { wolf: data });
             }
-        );
-        wolfUpdate.save(function(err) {
+        });
+    },
+    edit: function(req, res) {
+        Wolf.update( { _id: req.params.id }, req.body, function(err, result) {
             if(err) {
                 console.log(err);
             } else {
-                console.log("Successfully edited direwolf.");
+                console.log("Successfully edited direwolf");
                 res.redirect('/');
             }
-        })
+        });
     },
+
     destroy: function(req, res) {
-        Wolf.deleteOne( {_id: req.params.id}, function(errors, data) {
+        Wolf.remove( {_id: req.params.id}, function(errors, data) {
             if(errors) {
                 console.log(errors);
             } else {
                 console.log("Deleted a direwolf successfully");
-                res.render('index', {wolf: data});
+                res.redirect('/');
             }
         });
     }

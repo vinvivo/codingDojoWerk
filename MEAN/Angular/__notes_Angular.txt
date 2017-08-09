@@ -1,0 +1,11 @@
+When first starting an app, import these modules into .../src/app/app.module.ts
+    import { FormsModule } from '@angular/forms';  // utilized for Angular forms
+    import { HttpModule } from '@angular/http';  // utilized for Angular HTTP requests to any API
+
+and, under @NgModule({
+    ...
+    imports: [
+        ... *DON'T FORGET COMMAS*
+        FormsModule,  // include module in our AppModules
+        HttpModule // include module in our AppModules
+    ]

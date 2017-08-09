@@ -6,7 +6,7 @@
         <meta charset='UTF-8'>
         <meta name='description' content="Vinney's practice assignment, Direwolf Dashboard, for MEAN">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link href='style.css' rel='stylesheet'>
+        <!-- <link href='style.css' rel='stylesheet'> -->
         <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
         <style>
             * {
@@ -25,7 +25,9 @@
                 <hr>
                 <a class="endbutton" href="/">Go Back</a>
                 <a class="endbutton" href="/direwolves/edit/<%= wolf.id %>">Edit</a>
-                <a class="endbutton" href="/direwolves/destroy/<%= wolf.id %>">Delete</a>
+                <form action="/direwolves/destroy/<%= wolf.id %>" method="post">
+                    <input type="submit" value="Delete"/>
+                </form>
     </body>
 
 </html>

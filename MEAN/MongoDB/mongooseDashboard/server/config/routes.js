@@ -15,9 +15,6 @@ module.exports = function(app) {
         wolves.show(req, res);
     });
     
-    app.get('/direwolves/:id', function(req, res) {
-        wolves.showByID(req, res);
-    });
 
     app.post('/direwolves', function(req, res) {
         wolves.create(req, res);
@@ -28,14 +25,18 @@ module.exports = function(app) {
     });
 
     app.get('/direwolves/edit/:id', function(req, res) {
-        wolves.showByID(req, res);
+        wolves.showEdit(req, res);
+    });
+
+    app.post('/direwolves/destroy/:id', function(req, res) {
+        wolves.destroy(req, res);
     });
 
     app.post('/direwolves/:id', function(req, res) {
         wolves.edit(req, res);
     });
 
-    app.post('/direwolves/destroy/:id', function(req, res) {
-        wolves.destroy(req, res);
+    app.get('/direwolves/:id', function(req, res) {
+        wolves.showByID(req, res);
     });
 };
