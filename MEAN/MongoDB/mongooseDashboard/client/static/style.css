@@ -1,14 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 * {
     font-size: 13px;
-    color: darkmagenta;
+    color: white;
 
 }
 body{
   /* border: 1px solid red; */
   height: 100vh;
-  background: -webkit-linear-gradient(left, mistyrose, lightpink);
-  background: linear-gradient(to right, mistyrose, lightpink);
+  background: -webkit-linear-gradient(left, slategray, black);
+  background: linear-gradient(to right, slategray, black);
   font-family: 'Source Sans Pro', sans-serif;
 }
 section{
@@ -23,7 +23,7 @@ section{
 h1{
   /* border: 1px solid blue; */
   font-size: 3em;
-  color: darkmagenta;
+  color: white;
   text-transform: uppercase;
   font-weight: 300;
   text-align: center;
@@ -31,7 +31,7 @@ h1{
 }
 h2{
   font-size: 2em;
-  color: darkmagenta;
+  color: white;
   text-transform: uppercase;
   font-weight: 300;
   text-align: center;
@@ -49,14 +49,14 @@ img {
   margin: 5px;
 }
 a {
-    color: darkmagenta;
+    color: white;
     text-decoration: none;
     /* background-color: transparent; */
     background-color: rgba(255,255,255,0.3); 
     /* width: 20%;  */
     padding: 0px 20px 0px 20px;  
     font-size: 1em;
-    border: 1px solid rgba(219,112,147,0.3); 
+    border: 1px solid rgba(255,255,255,0.3); 
     /* border-radius: 10%;  */
     vertical-align: center;
 }
@@ -82,7 +82,7 @@ legend {
 }
 
 span {
-    color: darkmagenta;
+    color: white;
     margin: 0px 0px 2px 0px;
     padding: 5px 10px 5px 10px;  
     font-size: 1em;
@@ -96,7 +96,7 @@ span {
 
 input[type="submit"].small {
   /* margin: 50px; */
-  color: darkmagenta;
+  color: white;
   /* background-color: transparent; */
   background-color: rgba(255,255,255,0.1); 
   /* width: 20%;  */
@@ -110,7 +110,7 @@ input[type="submit"].small {
 
 input[type="submit"], a.endbutton{
   margin: 50px; 
-  color: darkmagenta;
+  color: white;
   /* background-color: transparent; */
   background-color: rgba(255,255,255,0.5); 
   /* width: 20%;  */
@@ -126,7 +126,7 @@ input[type="submit"], a.endbutton{
 
 input.nothing {
   /* margin: 50px; */
-  color: darkmagenta;
+  color: white;
   background-color: transparent; 
   /* background-color: rgba(255,255,255,0.1);  */
   /* width: 20%;  */
@@ -139,7 +139,7 @@ input.nothing {
 }
 
 input[type="text"], textarea{
-  color: darkmagenta;
+  color: white;
   /* background-color: transparent; */
   background-color: rgba(255,255,255,0.1); 
   /* width: 20%;  */
@@ -152,7 +152,7 @@ input[type="text"], textarea{
   min-width: 27%;
 }
 select {
-    color: darkmagenta;
+    color: white;
     background-color: rgba(255,255,255,0.1); 
     padding: 5px 10px 5px 10px;  
     font-size: 1em;
@@ -191,7 +191,7 @@ hr {
 
 /* a.endbutton { */
   /* margin: 50px; */
-  /* color: darkmagenta; */
+  /* color: white; */
   /* background-color: transparent; */
   /* background-color: rgba(255,215,0,0.1);  */
   /* width: 20%;  */
