@@ -1,0 +1,37 @@
+<div [ngClass]="{'background_gradient': true}">
+  <section>
+    <fieldset>
+  
+        <h1>{{title | uppercase }}</h1>
+        <div [ngClass]="tbl-header">
+          <table>
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Importance</th>
+                <th>Subject</th>
+                <th>Content</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div [ngClass]="{'tbl-content': true}">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              <tr *ngFor="let number of numbers">
+                 <td>{{ number.email | lowercase }}</td>
+                 <td *ngIf="number.importance">{{ importance[1] }}</td>
+                 <td *ngIf="!number.importance">{{ importance[0] }}</td>
+                 <td>{{ number.subject }}</td>
+                 <td>{{ number.content }}</td>
+                <!-- <td>{{ numbers | json }}</td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+    </fieldset>
+  </section>
+  
+
+</div>  
