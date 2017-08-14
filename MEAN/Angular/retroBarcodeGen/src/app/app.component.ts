@@ -10,8 +10,6 @@ export class AppComponent implements OnInit {
   title = 'Retro Barcode Generator';
   // Select a random color from an array of colors
   randomArray: any[] = [];
-  // Select a random width from an array of widths
-  randomWidthArray: string[] = [];
 
   randomColorGenerator() {
     for (let i = 0; i < 40; i++) {
