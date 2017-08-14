@@ -1,0 +1,8 @@
+  <section>
+      <h1>{{title | uppercase }}</h1>
+      <div 
+        class="box"
+        *ngFor="let i of randomArray"
+        [ngStyle]="{'background-color': i.color, 'width': i.width }">
+      </div>
+  </section>
