@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+* {
+    font-size: 10px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.background_gradient {
+    background: -webkit-linear-gradient(left, mediumturquoise, mediumaquamarine);
+    background: linear-gradient(to right, mediumturquoise, mediumaquamarine);
+    width: 100vw;
+    height: 100vh;
+}
+section {
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-top: 20px;
+}
+h2{
+  font-size: 4em;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: rgba(255,215,0,0.1); 
+  margin: 2px 0px 2px 0px;
+  padding: 10px 20px 10px 20px;  
+  font-size: 2em;
+  border: 1px solid rgba(255,255,255,0.3); 
+  min-width: 13%;
+}
+
+.yellow {
+  background-color: yellow;
+  color: darkblue;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.9); 
+}
