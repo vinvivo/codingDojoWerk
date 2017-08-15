@@ -208,5 +208,13 @@ ng generate service PROJECT_NAME-service
 ng generate class PROJECT_NAME-class
 ng server
 
+in app.module.ts:
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
+and add to imports:
+    [...
+     FormsModule,
+     HttpModule
+    ]
 

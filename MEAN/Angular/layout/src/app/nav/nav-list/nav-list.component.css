@@ -1,0 +1,7 @@
+button {
+    width: 80%;
+    display: block;
+    margin: 1em auto;
+    background-color: white;
+    border: 2px outset gray;
+}
