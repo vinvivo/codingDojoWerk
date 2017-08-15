@@ -6,3 +6,13 @@ h6 {
 p {
   margin: 1em;
 }
+
+article {
+    width: 69.5vw;
+    height: 60vh;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1em;
+    margin-left: 1em;
+    background: lavender;
+}
