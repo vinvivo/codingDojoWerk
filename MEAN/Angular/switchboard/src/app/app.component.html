@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<section>
+  <div style="text-align:center">
+    <h1>
+      {{title}}
+    </h1>
+    <div class="switchBackground" *ngFor="let bool of switchArray; let idx = index">
+      <button [ngClass]="{ 'on': bool }"
+              *ngIf="bool"
+              (click)="switch(idx)">
+        ON
+      </button>
+      <button [ngClass]="{ 'on': bool }"
+              *ngIf="!bool"
+               (click)="switch(idx)">
+        OFF
+      </button>
+    </div>
+  </div>
+</section>
