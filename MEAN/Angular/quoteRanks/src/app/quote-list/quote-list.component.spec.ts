@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GitHubScoreComponent } from './git-hub-score.component';
+import { QuoteListComponent } from './quote-list.component';
 
-describe('GitHubScoreComponent', () => {
-  let component: GitHubScoreComponent;
-  let fixture: ComponentFixture<GitHubScoreComponent>;
+describe('QuoteListComponent', () => {
+  let component: QuoteListComponent;
+  let fixture: ComponentFixture<QuoteListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GitHubScoreComponent ]
+      declarations: [ QuoteListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GitHubScoreComponent);
+    fixture = TestBed.createComponent(QuoteListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

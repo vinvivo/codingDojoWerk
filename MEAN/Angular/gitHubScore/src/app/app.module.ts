@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { GitHubScoreComponent } from './git-hub-score/git-hub-score.component';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GitHubScoreComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    FormsModule,
+    HttpModule,
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

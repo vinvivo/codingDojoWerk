@@ -1,0 +1,42 @@
+
+div.quote {
+    width: 610px;
+    border: 1px solid darkslategrey;
+    padding: 5px;
+}
+div.content {
+    width: 400px;
+    display: inline-block
+}
+div.rating {
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+div.buttons {
+    vertical-align: top;
+    width: 90px;
+    display: inline-block
+}
+div.buttons {
+    text-align: center;
+}
+div.buttons button {
+    display: block;
+    width: 95px;
+}
+
+div.buttons button.up {
+    background-color: seagreen;
+    color: white;
+}
+div.buttons button.down {
+    background-color: crimson;
+    color: white;
+}
+div.buttons button.delete {
+    background-color: black;
+    color: white;
+    
+}

@@ -1,0 +1,22 @@
+
+section {
+    width: 600px;
+}
+div.inputs {
+    text-align: right;
+    width: 300px;
+    display: inline-block;
+}
+div.inputs button {
+    text-align: right;
+}
+div.validations {
+    display: inline-block;
+    vertical-align: top;
+}
+div.validations span {
+    display: block;
+}
+div.validations span.author {
+    margin-top: 20px;
+}
