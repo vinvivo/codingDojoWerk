@@ -19,7 +19,7 @@ export class AppComponent {
   calculateScore() {    // this function is available to this component's template
     this.promise = this._apiService.retrieveUser(this.username);
     if(this.promise) {
-      this.promise.then( user => {    // parentheses on (use) are optional when only one parameter
+      this.promise.then( user => {    // parentheses on (user) are optional when only one parameter
         if(user.id) {   // see user object structure at end of code
           this.userExists = true;
           this.score = user.public_repos + user.followers;
