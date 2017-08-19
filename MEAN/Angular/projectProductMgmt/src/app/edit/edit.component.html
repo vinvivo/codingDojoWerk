@@ -10,7 +10,6 @@
 </div> -->
 
 <form #formData="ngForm" (ngSubmit)="confirmEdit()">
-  <img src="{{product.url}}" alt="">
   <p>
     <span>Product name:</span>
     <input type="text" name="name" required minlength="2" [(ngModel)]="product.name" #name="ngModel" value="{{product.name}}">
@@ -26,6 +25,7 @@
     <input type="text" name="url" required minlength="5" [(ngModel)]="product.url" #url="ngModel" value="{{product.url}}">
     <!-- {{url.errors | json}} -->
   </p>
+  <img src="{{product.url}}" alt="">
   <button type="submit" class="blue" [routerLink]="['/products']" [disabled]="!formData.valid">Update</button>
   <button type="button" (click)="deleteThis()" [routerLink]="['/products']" class="red">Delete</button>
 </form>
