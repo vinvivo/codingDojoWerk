@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700,500,400,300,200,100);
+* {
+    /* color: darkblue; */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+h1 { font-size: 3em; font-weight: 100; margin-bottom: 0.5em; }
+h2 { font-size: 1.6em; font-weight: 300; display: inline; }
+h3 { 
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-top: 2em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: royalblue;
+}
+
+b { font-size: 2em; font-weight: 700; }
+
+
+.orange { color: darkorange; }
+.red { color: tomato; }
+.green { color: olivedrab; }
+.blue { color: powderblue; }

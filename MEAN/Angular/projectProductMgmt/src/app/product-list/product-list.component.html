@@ -1,3 +1,8 @@
-<p>
-  product-list works!
-</p>
+<h3>Products List</h3>
+<div *ngFor="let product of products; let idx = index;" class="product-container">
+  <img src="{{products[idx].url}}" alt="">
+  <h4>{{products[idx].name}}</h4>
+  <h4>$ {{products[idx].price}}</h4>
+  <button class="orange" [routerLink]="['/products','edit', idx]">Edit</button>
+  <button type="button" (click)="deleteThis(idx)" class="red">Delete</button>
+</div>

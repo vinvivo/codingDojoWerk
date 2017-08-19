@@ -1,3 +1,31 @@
-<p>
-  edit works!
-</p>
+<h3>Edit Product</h3>
+<!-- <div class="product-container">
+  <form #formData = "ngForm" (ngSubmit)="confirmEdit()">
+    
+    <input type="text"  {{product.name}}
+    <h4>$ {{product.price}}</h4>
+    <button type="submit" class="blue" [routerLink]="['/products']" [disabled]="!formData.valid">Update</button>
+    <button type="button" (click)="deleteThis()" [routerLink]="['/products']" class="red">Delete</button>
+  </form>
+</div> -->
+
+<form #formData="ngForm" (ngSubmit)="confirmEdit()">
+  <img src="{{product.url}}" alt="">
+  <p>
+    <span>Product name:</span>
+    <input type="text" name="name" required minlength="2" [(ngModel)]="product.name" #name="ngModel" value="{{product.name}}">
+    <!-- {{name.errors | json}} -->
+  </p>
+  <p>
+    <span>Price:</span>
+    <input type="text" name="price" required minlength="1" [(ngModel)]="product.price" #price="ngModel" value="{{product.price}}">
+    <!-- {{price.errors | json}} -->
+  </p>
+  <p>
+    <span>Image URL:</span>
+    <input type="text" name="url" required minlength="5" [(ngModel)]="product.url" #url="ngModel" value="{{product.url}}">
+    <!-- {{url.errors | json}} -->
+  </p>
+  <button type="submit" class="blue" [routerLink]="['/products']" [disabled]="!formData.valid">Update</button>
+  <button type="button" (click)="deleteThis()" [routerLink]="['/products']" class="red">Delete</button>
+</form>
