@@ -1,0 +1,37 @@
+HOW TO USE MATERIALIZE WITH ANGULAR 4
+
+- (Terminal) Start a new project:
+
+    ng new {{PROJECT_NAME}}
+
+    cd {{PROJECT_NAME}}
+
+
+- (Terminal) In the project folder:
+
+    npm install --save @angular/material @angular/animations
+
+- In the app.module.ts file:
+
+    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+    - And add to imports array:
+      imports: [
+          ...,
+          BrowserAnimationsModule
+      ]
+
+    - And import the modules you intend to use. List of modules can be found here (https://material.angular.io/components) under the "API" tab after clicking into the details of the desired component.
+        import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+    
+    - And add these to imports array too!
+
+- In app/styles.css file, import a prebuilt color theme (Available pre-built themes: deeppurple-amber.css, indigo-pink.css, pink-bluegrey.css, purple-green.css)
+    
+    @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+- In app/index.html file, within the <head> tags, link to Icon font and Roboto font:
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+

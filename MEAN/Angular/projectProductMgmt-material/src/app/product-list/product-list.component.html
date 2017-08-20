@@ -1,0 +1,37 @@
+<h3>Products List</h3>
+<div *ngFor="let product of products; let idx = index;">
+  <img src="{{products[idx].url}}" alt="">
+  <h4>{{products[idx].name}}</h4>
+  <h4>$ {{products[idx].price}}</h4>
+  <button [routerLink]="['/products','edit', idx]">Edit</button>
+  <button type="button" (click)="deleteThis(idx)">Delete</button>
+</div>
+
+<div class="body">
+<md-toolbar color="primary">
+  
+    <span>MyCompany</span>
+    <span class="example-spacer"></span>
+    <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+  
+  </md-toolbar>
+  
+  <md-menu #appMenu="mdMenu">
+    <button md-menu-item> Settings </button>
+    <button md-menu-item> Help </button>
+  </md-menu>
+  
+  <md-card *ngFor="let data of (myData ? myData.slice(0,10): []); let i = index">
+  
+    <img md-card-image src="{{ data.url }}">
+    <md-card-header>
+      <md-card-title>{{ data.title }}</md-card-title>
+    </md-card-header>
+  
+    <md-card-actions>
+      <button md-button>LIKE</button>
+      <button md-button>SHARE</button>
+    </md-card-actions>
+  
+  </md-card>
+</div>

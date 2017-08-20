@@ -1,0 +1,30 @@
+<md-toolbar color="primary">
+
+  <span>MyCompany</span>
+  <span class="example-spacer"></span>
+  <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+
+</md-toolbar>
+
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
+  <div>
+    <div>
+      <h1>
+        {{title}}
+      </h1>
+      <a [routerLink]="['']">HOME</a>&nbsp; | &nbsp;
+      <a [routerLink]="['products']">PRODUCT LIST</a>&nbsp; | &nbsp;
+      <a [routerLink]="['products','new']">ADD PRODUCT</a>
+      <!-- <p>{{products | json}}</p> -->
+    </div>
+    
+
+    <fieldset>
+      <router-outlet></router-outlet>
+    </fieldset>
+
+  </div>

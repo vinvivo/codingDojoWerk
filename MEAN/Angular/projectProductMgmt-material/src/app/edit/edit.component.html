@@ -1,0 +1,21 @@
+<h3>Edit Product</h3>
+<form #formData="ngForm" (ngSubmit)="confirmEdit()">
+  <p>
+    <span>Product name:</span>
+    <input type="text" name="name" required minlength="2" [(ngModel)]="product.name" #name="ngModel" value="{{product.name}}">
+    <!-- {{name.errors | json}} -->
+  </p>
+  <p>
+    <span>Price:</span>
+    <input type="text" name="price" required minlength="1" [(ngModel)]="product.price" #price="ngModel" value="{{product.price}}">
+    <!-- {{price.errors | json}} -->
+  </p>
+  <p>
+    <span>Image URL:</span>
+    <input type="text" name="url" required minlength="5" [(ngModel)]="product.url" #url="ngModel" value="{{product.url}}">
+    <!-- {{url.errors | json}} -->
+  </p>
+  <img src="{{product.url}}" alt="">
+  <button type="submit" [routerLink]="['/products']" [disabled]="!formData.valid">Update</button>
+  <button type="button" (click)="deleteThis()" [routerLink]="['/products']" >Delete</button>
+</form>
