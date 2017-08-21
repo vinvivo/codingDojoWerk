@@ -1,0 +1,60 @@
+p {
+    font-size: 1.5em;
+}
+
+a#back {
+    background: url('/assets/images/back.svg') no-repeat;
+    width: 69px;
+    display: block;
+    color: #2A3136;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-indent: 16px;
+    padding-top: 1px;
+    margin-bottom: 5px;
+}
+
+#external-btn svg {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    max-width: none;
+    left: 24px;
+}
+
+/* Small screens */
+@media screen and (max-width: 39.9375em) {
+    #logo, .cta-btn {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    #external-btn {
+        width: 50px;
+        height: 50px;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+}
+
+/* Medium screens */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    p {
+        font-size: 1.1em;
+    }
+
+    #external-btn {
+        width: 80px;
+        height: 80px;
+    }
+}

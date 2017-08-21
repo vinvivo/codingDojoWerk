@@ -7,3 +7,22 @@
 #logo {
     width: 200px;
 }
+
+
+/* Small screens */
+@media screen and (max-width: 39.9375em) {
+    #logo, .cta-btn {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .header {
+        margin-bottom: 0;
+    }
+}
