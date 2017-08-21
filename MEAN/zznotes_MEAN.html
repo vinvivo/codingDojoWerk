@@ -85,6 +85,35 @@ png/jpeg/gif	{'Content-Type': 'image/*'} (* is the image format, ie png or jpeg 
 
 <!-- ___________________________________ mongoDB ___________________________________ -->
 
+STARTING A PROJECT:
+-------------------------------
+1. Start mongod and mongo db (in two separate tabs)
+
+    sudo mongod
+    mongo
+
+2. Create new database for project:
+
+    use <PROJECT_NAME>      // use codepostsnet
+
+3. Create a new collection in the current database:
+
+    db.<collection_name>.insertOne( { x: 1 } );     // db.users.insertOne( { x: 1 } );
+
+4. Create new documents in the collection:
+    
+    try { db.<collection_name>.insertMany(
+            [
+                {
+                    username: "vinvivo",
+                    posts: {
+                        
+                    }
+                }
+        
+        ]) }
+
+
 COMMANDS:
 -------------------------------
 show dbs                        show all databases available on current MongoDB server

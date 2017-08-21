@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'burbank', pathMatch: 'full', component: BurbankComponent, children: [] },
   { path: 'dallas', pathMatch: 'full', component: DallasComponent, children: [] },
   { path: 'washington', pathMatch: 'full', component: WashingtonComponent, children: [] },
-  { path: 'chicago', pathMatch: 'full', component: ChicagoComponent, children: [] }  
+  { path: 'chicago', pathMatch: 'full', component: ChicagoComponent, children: [] }
 ];
 
 @NgModule({
