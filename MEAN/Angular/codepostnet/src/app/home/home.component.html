@@ -20,7 +20,17 @@
         </div>
       </div>
       <p>{{ post.description | length: 130 }}</p>
-      <a routerLink="/details/{{ post._id }}" class="cta-btn btn2">More Info</a>
+      <div class="row">
+        <div class="columns small-12 large-4">
+          <a routerLink="/details/{{ post._id }}" class="cta-btn btn2">More Info</a>
+        </div>
+        <div class="columns small-12 large-7">
+          <button class="cta-btn btn2" (click)="like(post)">Likes &nbsp;|&nbsp; {{ post.likes }}</button>
+        </div>
+        <div class="columns small-12 large-1">
+
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -17,14 +17,14 @@ body {
     font-family: 'Raleway';
 }
 
-a {
+a, button {
     color: #fff;
 }
-a:hover {
+a:hover, button:hover {
     color: $accent-color;
 }
 
-.cta-btn, .cta-btn:visited {
+.cta-btn, .cta-btn:visited, button, button:visited {
     color: $accent-color;
     border: 1px solid $accent-color;
     padding: 5px 12px;
@@ -32,7 +32,7 @@ a:hover {
     border-radius: 5px;
 }
 
-.cta-btn:hover {
+.cta-btn:hover, button:hover {
     background: $accent-color;
     color: $bg;
 }
