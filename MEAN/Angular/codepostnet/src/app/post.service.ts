@@ -29,8 +29,8 @@ export class PostService {
       .map( result => this.result = result.json());
   }
 
-  updatePost(post) {
-    let 
-    db.posts.updateOne( {home_state: "WA"}, { $inc: { "number_of_belts": 1 } } )
-  }
+  // updatePost(post) {
+  //   let 
+  //   db.posts.updateOne( {home_state: "WA"}, { $inc: { "number_of_belts": 1 } } )
+  // }
 }

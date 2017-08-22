@@ -35,11 +35,11 @@ export class AnswerComponent implements OnInit {
     });
   }
 
-  editPost(post: Post) {
-    this._postService.updatePost(post)  // passing in "post" defined in function's argument
-      .subscribe(newPost => {           // calling the response object "newPost"
-        this.post.push(newPost);       // push newPost into posts (line 14)
-        this.router.navigateByUrl('/');   // re-routes user to home page
-      });
-  }
+  // editPost(post: Post) {
+  //   this._postService.updatePost(post)  // passing in "post" defined in function's argument
+  //     .subscribe(newPost => {           // calling the response object "newPost"
+  //       this.post.push(newPost);       // push newPost into posts (line 14)
+  //       this.router.navigateByUrl('/');   // re-routes user to home page
+  //     });
+  // }
 }
