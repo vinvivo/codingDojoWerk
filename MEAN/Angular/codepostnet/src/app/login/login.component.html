@@ -1,0 +1,16 @@
+<div class="body-blur">
+  <div class="row columns">
+    <h1>Post a Question</h1>
+  </div>
+
+  <form [formGroup]="postForm" (ngSubmit)="addPost(postForm.value)">
+    <div class="row columns">
+      <label>Name
+        <input type="text" name="user" [formControl]="postForm.controls['user']">
+      </label>
+      <div class="alert" *ngIf="!postForm.controls['user'].valid && postForm.controls['user'].touched">You must enter your name.</div>
+      <input type="submit" class="cta-btn filled" value="Post Tutorial" [disabled]="!postForm.valid">
+    </div>
+  </form>
+
+</div>

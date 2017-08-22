@@ -22,9 +22,4 @@ export class HomeComponent implements OnInit {
         .subscribe(res => this.posts = res);
     }
 
-    like(post) {
-      post.likes++;
-      console.log(post.likes);
-    }
-
   }

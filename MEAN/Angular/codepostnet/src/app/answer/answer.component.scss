@@ -1,0 +1,85 @@
+p {
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+label {
+    font-size: 1.5em;
+    margin-bottom: 0;
+    color: mistyrose;
+}
+
+a {
+    display: inline-block;
+    color: lightcoral;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 1px;
+    margin-bottom: 5px;
+}
+
+.author {
+    background-color: mistyrose;
+    color: #2a3136;
+    padding: 1px 3px;
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+.likes {
+    padding: 1px 3px;
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+.btn2 {
+    color: lightcoral;
+    border: 1px solid lightcoral;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+#external-btn svg {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    max-width: none;
+    left: 24px;
+}
+
+/* Small screens */
+@media screen and (max-width: 39.9375em) {
+    #logo, .cta-btn {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    #external-btn {
+        width: 50px;
+        height: 50px;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+}
+
+/* Medium screens */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    p {
+        font-size: 1.1em;
+    }
+
+    #external-btn {
+        width: 80px;
+        height: 80px;
+    }
+}

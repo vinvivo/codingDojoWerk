@@ -13,6 +13,9 @@ import { LengthPipe } from './length.pipe';
 import { PostComponent } from './post/post.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OrderbyPipe } from './orderby.pipe';
+import { LoginComponent } from './login/login.component';
+import { AnswerComponent } from './answer/answer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     DetailsComponent,
     LengthPipe,
-    PostComponent
+    PostComponent,
+    OrderbyPipe,
+    LoginComponent,
+    AnswerComponent
   ],
   imports: [
     BrowserModule,

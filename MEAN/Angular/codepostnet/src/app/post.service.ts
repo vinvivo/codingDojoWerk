@@ -11,12 +11,13 @@ export class PostService {
   constructor(private _http: Http) { }
 
   getPosts() {
-    return this._http.get("/api/posts")   // route name comes from /api in server.js + /posts in api.js
+    console.log(this._http);
+    return this._http.get('/api/posts')   // route name comes from /api in server.js + /posts in api.js
       .map( result => this.result = result.json());
   }
 
   getPost(id) {
-    return this._http.get("/api/details/" + id)   // route name comes from /api in server.js + /posts in api.js
+    return this._http.get('/api/question/' + id)   // route name comes from /api in server.js + /posts in api.js
       .map( result => this.result = result.json());
   }
 
@@ -26,5 +27,10 @@ export class PostService {
 
     return this._http.post('/api/posts', JSON.stringify(post), options)
       .map( result => this.result = result.json());
+  }
+
+  updatePost(post) {
+    let 
+    db.posts.updateOne( {home_state: "WA"}, { $inc: { "number_of_belts": 1 } } )
   }
 }

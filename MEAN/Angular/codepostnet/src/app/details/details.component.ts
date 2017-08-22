@@ -28,4 +28,9 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  like(post, idx) {
+    post.response[idx].likes++;
+    console.log(post.response[idx].likes);
+  }
+
 }

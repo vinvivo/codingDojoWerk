@@ -20,9 +20,8 @@ export class PostComponent implements OnInit {
 
   constructor(private _postService: PostService, private formBuilder: FormBuilder, private router: Router) {
     this.postForm = formBuilder.group({
-      'title' : [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(75)])],
-      'url' : [null, Validators.required],
-      'description' : [null, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(500)])],
+      'question' : [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(75)])],
+      'description' : [null, null],
     })
   }
 

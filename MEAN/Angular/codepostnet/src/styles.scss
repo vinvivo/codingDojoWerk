@@ -4,8 +4,8 @@
 
 // Declare variables for SCSS
 $bg: #2a3136;
-$text-color: #88949D;
-$accent-color: #00efac;
+$text-color: #FFE4E1;
+$accent-color: lightcoral;
 
 body, html {
     height: 100%;
@@ -44,6 +44,15 @@ h1 {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 4.2em;
+    line-height: 1.2em;
+}
+h3 {
+    font-family: 'Raleway';
+    color: lightcoral;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2em;
     line-height: 1.2em;
 }
 

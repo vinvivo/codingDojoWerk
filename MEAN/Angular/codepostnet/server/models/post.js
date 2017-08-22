@@ -7,9 +7,10 @@ const mongoose = require('mongoose');   // mongoose enables communication with m
 const Schema = mongoose.Schema;         // new instance of Schema from mongoose
 
 const postSchema = new Schema({         // create a model that is a new instance of Schema called 'postSchema'
-    title: String,
-    url: String,
-    description: String
+    user: String,
+    question: String,
+    description: String,
+    response: [{ author: String, answer: String, support: String, likes: Number}]
 });
 
 module.exports = mongoose.model('post', postSchema);    // defines what will be brought in when another module imports/"requires" this model

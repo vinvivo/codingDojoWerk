@@ -1,17 +1,36 @@
 p {
     font-size: 1.5em;
+    margin-bottom: 0;
 }
 
-a#back {
-    background: url('/assets/images/back.svg') no-repeat;
-    width: 69px;
-    display: block;
-    color: #2A3136;
+a {
+    display: inline-block;
+    color: lightcoral;
     font-weight: bold;
     text-transform: uppercase;
-    text-indent: 16px;
     padding-top: 1px;
     margin-bottom: 5px;
+}
+
+.author {
+    background-color: mistyrose;
+    color: #2a3136;
+    padding: 1px 3px;
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+.likes {
+    padding: 1px 3px;
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+.btn2 {
+    color: lightcoral;
+    border: 1px solid lightcoral;
+    padding: 5px 12px;
+    border-radius: 5px;
 }
 
 #external-btn svg {

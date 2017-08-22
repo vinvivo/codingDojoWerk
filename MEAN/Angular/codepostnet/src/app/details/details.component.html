@@ -1,25 +1,19 @@
 
-<div *ngIf="post" class="body-blur">   <!-- "post" is defined in details.component.ts -->
-    <div class="row">
-      <div class="columns small-12 medium-10">
-        <a routerLink="/" id="back">Back</a>
-        <h1>{{ post.title }}</h1>
-      </div>
-      <div class="columns small-12 medium-2">
-        <a href="{{ post.url }}" id="external-btn">
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 96.8 96.8" style="enable-background:new 0 0 96.8 96.8;" xml:space="preserve" style="width:100%;height:100%;">
-            <g id="group">
-              <circle class="circle" cx="48.4" cy="48.4" r="48.4" />
-              <polygon class="arrow" points="60.4,25.6 44.2,25.6 33.1,36.2 51.4,36.2 21.7,70.8 36,70.8 60.4,42.3 60.4,63.3 71,50.9 71,36.2 
-                71,25.6 " />
-            </g>
-          </svg>
-        </a>
-      </div>
-    </div>
-  
+<div *ngIf="post">   <!-- "post" is defined in details.component.ts -->
     <div class="row columns">
-      <p>{{ post.description }}</p>
+      <a routerLink="/" id="back">Home</a> &nbsp;|&nbsp; <a routerLink="/question/{{ post.id }}/new_answer" id="answerQ">Answer this Question</a>
+      <h1>{{ post.question }}</h1>
+      <h3>{{ post.description }}</h3>
+      <br>
+    </div>
+    <div class="row" *ngFor="let answer of post.response; let idx=index">
+      <div class="columns small-12 medium-7">
+        <p class="author">{{answer.author}}:</p>
+        <p><b>{{answer.answer}}</b></p>
+        <p>{{answer.support}}</p>
+      </div>
+      <div class="columns small-12 medium-5">
+        <p class="likes">{{ answer.likes }} likes <button class="btn2" (click)="like(post, idx)">Like</button></p>
+      </div>
     </div>
 </div>

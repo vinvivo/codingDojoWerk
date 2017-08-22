@@ -1,7 +1,7 @@
 
 $bg: #2a3136;
-$text-color: #88949D;
-$accent-color: #00efac;
+$text-color: mistyrose;
+$accent-color: lightcoral;
 
 label {
     color: $accent-color;
@@ -10,9 +10,10 @@ label {
 
 input[type='text'], textarea {
     background: none;
-    border: 1px solid #617879;
+    border: 1px solid mistyrose;
     padding: 22px 15px;
     color: $text-color;
+    margin-right: 10px;
 }
 
 textarea {
