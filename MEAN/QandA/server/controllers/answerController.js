@@ -5,7 +5,7 @@ const Question = mongoose.model('Question');
 
 module.exports = {
     getAll: function(req, res) {
-        Question.findOne({ _id: req.params.id })
+        Question.findOne({ _id: req.params.q_id })
             .populate('_answer')
             .exec(function(errors, question) {
                 if(errors) {
@@ -33,7 +33,29 @@ module.exports = {
         })
 
     },
-    updateLikes: function(req, res) {
-        Answer.findOneAndUpdate({ _id: req.params.a_id }, {$inc: {"likes": 1}});
+    updateLikes: function(req, res){
+        console.log("UpdateLikes a_id ", req.params.a_id);
+        Answer.findOneAndUpdate({_id: req.params.a_id}, {$inc: {likes: 1}},
+        function(err, response){
+            if (err) {
+                res.json(0);
+            } else {
+                res.json(response);
+            }
+        })
     },
+
+    destroy: function(req, res) {
+        console.log("answerController destroy ", req.params.a_id);
+        Answer.remove( {_id: req.params.a_id}, function(errors, data) {
+            if(errors) {
+                console.log("Errors at constroller");
+                res.json(0);
+            } else {
+                console.log("Deleted an answer successfully");
+                res.json(data);
+            }
+        })
+    }
+
 }

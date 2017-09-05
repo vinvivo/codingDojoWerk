@@ -1,0 +1,19 @@
+<div>
+  <a [routerLink]="['/dashboard']">Home</a> |
+  <a [routerLink]="['/question', question._id, 'new_answer']">Answer this Question</a>
+  <a [routerLink]="['']">Logouts</a>
+  <h1>{{question.q_text}}</h1>
+  <p>{{question.desc}}</p>
+  <div *ngFor="let answer of question._answer">
+    <fieldset>
+      <p>{{answer.user}}</p>
+      <p>{{answer.a_text}}</p>
+      <p>{{answer.likes}}</p>
+      <p>{{answer.details}}</p>
+      <button (click)="addLike(answer._id)">Like!</button>
+      <div *ngIf="user.name === answer.user"><button (click)="delete(answer._id)">Delete</button></div>
+      <br>User.name = {{user.name}}
+      <br>Answer.user = {{answer.user}}
+    </fieldset>
+  </div>
+</div>

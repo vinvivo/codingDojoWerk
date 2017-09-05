@@ -1,0 +1,32 @@
+<div>
+  <nav>
+      <a [routerLink]="['/dashboard']">Home</a>
+      <a [routerLink]="['/question', question._id]">Go Back to Question</a>
+      <a [routerLink]="['']">Logout</a>
+  </nav>
+  <h1>{{question.q_text}}</h1>
+  <p>{{question.desc}}</p>
+  <form #formData="ngForm">
+    <label>Your Answer:
+      <textarea
+      name="a_text"
+      required
+      minlength="5"
+      [(ngModel)]="answer.a_text"
+      #a_text="ngModel"></textarea>
+      <p *ngIf="a_text.errors && a_text.dirty">Error mesage</p>
+    </label>
+    <br>
+    <label>Supporting details (optional):
+      <textarea
+      name="details"
+      [(ngModel)]="answer.details"
+      #details="ngModel"></textarea>
+      <p *ngIf="details.errors && details.dirty">Error mesage</p>
+    </label>
+  </form>
+  <div>
+    <input [routerLink]="['/dashboard']" type="button" value="Cancel">
+    <input (click)="onSubmit()" [routerLink]="['/dashboard']" type="submit" value="Submit" [disabled]="!formData.valid">
+  </div>
+</div>

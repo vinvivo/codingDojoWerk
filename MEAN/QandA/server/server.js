@@ -9,10 +9,10 @@ app.use(bodyParser.json());
 app.use(express.static('./../public/dist'));
 
 
-// // all database stuff
+// all database stuff
 require('./config/mongoose.js');
 
-// //all routes here
+// all routes here
 require('./config/routes.js')(app);
 
 // Setting our Server to Listen on Port: 8000
