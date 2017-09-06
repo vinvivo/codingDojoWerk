@@ -25,12 +25,11 @@ func randomNum() -> Int {
 }
 
 func swapTwo(array arr: inout [Int]) -> [Int] {
-    var temp: Int
     let num1: Int = randomNum()
     let num2: Int = randomNum()
-    temp = arr[num2]
-    arr[num2] = arr[num1]
-    arr[num1] = temp
+    if num1 != num2 {
+        swap(&arr[num1], &arr[num2])
+    }
     return arr
 }
 swapTwo(array: &myArray)
@@ -55,16 +54,20 @@ print("Result of shuffle \(myArray)")
 
 //4. Remove the value "42" from the array and Print "We found the answer to the Ultimate Question of Life, the Universe, and Everything at index __" and print the index of where "42" was before you removed it.
 
-func findFortyTwo(array arr: [Int]) -> Int {
+func findFortyTwo(array arr: inout [Int]) -> Int {
     var theAnswer: Int = Int()
     for i in 0..<arr.count {
         if arr[i] == 42 {
+            arr.remove(at: i)
             print("We found the answer to the Ultimate Question of Life, the Universe, and Everything at index \(i).")
             theAnswer = i
+            break
         }
     }
     return theAnswer
 }
 
-findFortyTwo(array: myArray)
+findFortyTwo(array: &myArray)
+//print(myArray)
+
 
