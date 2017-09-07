@@ -44,3 +44,36 @@ class Developer: Person {
 }
 var myDeveloper: Developer = Developer(name: "Vinney", favoriteLanguage: "Swift")
 myDeveloper.speak()
+
+//--------------------------------------------
+
+struct Card {
+    var color: String
+    var roll: UInt32
+}
+
+var cards: [Card] = []
+
+var blueCards = 0, redCards = 0, greenCards = 0
+while blueCards < 10 {
+    let randomNum: UInt32 = arc4random_uniform(2) + 1
+    cards.append(Card(color: "Blue", roll: randomNum))
+    blueCards += 1
+}
+while redCards < 10 {
+    let randomNum: UInt32 = arc4random_uniform(2) + 3
+    cards.append(Card(color: "Red", roll: randomNum))
+    redCards += 1
+}
+while greenCards < 10 {
+    let randomNum: UInt32 = arc4random_uniform(2) + 5
+    cards.append(Card(color: "Green", roll: randomNum))
+    greenCards += 1
+}
+
+print(cards.count)
+print(cards)
+
+if let topMostCard = cards.last {
+    print(topMostCard)
+}
