@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "coldCall/ViewController.swift"
+            timestampString = "526450009.872866"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "coldCall.ViewController.currentName.getter : Swift.Int"
+                  moduleName = "coldCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vinney/Desktop/DojoAssignments/iOS/basics/coldCall/coldCall/ViewController.swift"
+                  timestampString = "526450891.164435"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "coldCall.ViewController.currentName.setter : Swift.Int"
+                  moduleName = "coldCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vinney/Desktop/DojoAssignments/iOS/basics/coldCall/coldCall/ViewController.swift"
+                  timestampString = "526450891.166436"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "coldCall.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; coldCall.ViewController"
+                  moduleName = "coldCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vinney/Desktop/DojoAssignments/iOS/basics/coldCall/coldCall/ViewController.swift"
+                  timestampString = "526450891.168243"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "1782">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "coldCall.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;coldCall.ViewController&gt;"
+                  moduleName = "coldCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vinney/Desktop/DojoAssignments/iOS/basics/coldCall/coldCall/ViewController.swift"
+                  timestampString = "526450891.17021"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "1610">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
