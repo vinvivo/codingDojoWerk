@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D6B7436F1F61F1350015074E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B7436E1F61F1350015074E /* AppDelegate.swift */; };
+		D6B743711F61F1350015074E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B743701F61F1350015074E /* ViewController.swift */; };
+		D6B743741F61F1350015074E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6B743721F61F1350015074E /* Main.storyboard */; };
+		D6B743791F61F1350015074E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6B743771F61F1350015074E /* LaunchScreen.storyboard */; };
+		D6B743841F61F1350015074E /* StarCardWarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B743831F61F1350015074E /* StarCardWarsTests.swift */; };
+		D6B7438F1F61F1350015074E /* StarCardWarsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B7438E1F61F1350015074E /* StarCardWarsUITests.swift */; };
+		D6B7439D1F6205FE0015074E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6B7439C1F6205FE0015074E /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D6B743801F61F1350015074E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6B743631F61F1350015074E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6B7436A1F61F1350015074E;
+			remoteInfo = StarCardWars;
+		};
+		D6B7438B1F61F1350015074E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6B743631F61F1350015074E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6B7436A1F61F1350015074E;
+			remoteInfo = StarCardWars;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D6B7436B1F61F1350015074E /* StarCardWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarCardWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6B7436E1F61F1350015074E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D6B743701F61F1350015074E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D6B743731F61F1350015074E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D6B743781F61F1350015074E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D6B7437A1F61F1350015074E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6B7437F1F61F1350015074E /* StarCardWarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarCardWarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6B743831F61F1350015074E /* StarCardWarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarCardWarsTests.swift; sourceTree = "<group>"; };
+		D6B743851F61F1350015074E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6B7438A1F61F1350015074E /* StarCardWarsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarCardWarsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6B7438E1F61F1350015074E /* StarCardWarsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarCardWarsUITests.swift; sourceTree = "<group>"; };
+		D6B743901F61F1350015074E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6B7439C1F6205FE0015074E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D6B743681F61F1350015074E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6B7437C1F61F1350015074E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6B743871F61F1350015074E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D6B743621F61F1350015074E = {
+			isa = PBXGroup;
+			children = (
+				D6B7436D1F61F1350015074E /* StarCardWars */,
+				D6B743821F61F1350015074E /* StarCardWarsTests */,
+				D6B7438D1F61F1350015074E /* StarCardWarsUITests */,
+				D6B7436C1F61F1350015074E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D6B7436C1F61F1350015074E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6B7436B1F61F1350015074E /* StarCardWars.app */,
+				D6B7437F1F61F1350015074E /* StarCardWarsTests.xctest */,
+				D6B7438A1F61F1350015074E /* StarCardWarsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D6B7436D1F61F1350015074E /* StarCardWars */ = {
+			isa = PBXGroup;
+			children = (
+				D6B7436E1F61F1350015074E /* AppDelegate.swift */,
+				D6B743701F61F1350015074E /* ViewController.swift */,
+				D6B743721F61F1350015074E /* Main.storyboard */,
+				D6B7439C1F6205FE0015074E /* Assets.xcassets */,
+				D6B743771F61F1350015074E /* LaunchScreen.storyboard */,
+				D6B7437A1F61F1350015074E /* Info.plist */,
+			);
+			path = StarCardWars;
+			sourceTree = "<group>";
+		};
+		D6B743821F61F1350015074E /* StarCardWarsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D6B743831F61F1350015074E /* StarCardWarsTests.swift */,
+				D6B743851F61F1350015074E /* Info.plist */,
+			);
+			path = StarCardWarsTests;
+			sourceTree = "<group>";
+		};
+		D6B7438D1F61F1350015074E /* StarCardWarsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D6B7438E1F61F1350015074E /* StarCardWarsUITests.swift */,
+				D6B743901F61F1350015074E /* Info.plist */,
+			);
+			path = StarCardWarsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D6B7436A1F61F1350015074E /* StarCardWars */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6B743931F61F1350015074E /* Build configuration list for PBXNativeTarget "StarCardWars" */;
+			buildPhases = (
+				D6B743671F61F1350015074E /* Sources */,
+				D6B743681F61F1350015074E /* Frameworks */,
+				D6B743691F61F1350015074E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StarCardWars;
+			productName = StarCardWars;
+			productReference = D6B7436B1F61F1350015074E /* StarCardWars.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D6B7437E1F61F1350015074E /* StarCardWarsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6B743961F61F1350015074E /* Build configuration list for PBXNativeTarget "StarCardWarsTests" */;
+			buildPhases = (
+				D6B7437B1F61F1350015074E /* Sources */,
+				D6B7437C1F61F1350015074E /* Frameworks */,
+				D6B7437D1F61F1350015074E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6B743811F61F1350015074E /* PBXTargetDependency */,
+			);
+			name = StarCardWarsTests;
+			productName = StarCardWarsTests;
+			productReference = D6B7437F1F61F1350015074E /* StarCardWarsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D6B743891F61F1350015074E /* StarCardWarsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6B743991F61F1350015074E /* Build configuration list for PBXNativeTarget "StarCardWarsUITests" */;
+			buildPhases = (
+				D6B743861F61F1350015074E /* Sources */,
+				D6B743871F61F1350015074E /* Frameworks */,
+				D6B743881F61F1350015074E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6B7438C1F61F1350015074E /* PBXTargetDependency */,
+			);
+			name = StarCardWarsUITests;
+			productName = StarCardWarsUITests;
+			productReference = D6B7438A1F61F1350015074E /* StarCardWarsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D6B743631F61F1350015074E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Vinney Le";
+				TargetAttributes = {
+					D6B7436A1F61F1350015074E = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					D6B7437E1F61F1350015074E = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D6B7436A1F61F1350015074E;
+					};
+					D6B743891F61F1350015074E = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D6B7436A1F61F1350015074E;
+					};
+				};
+			};
+			buildConfigurationList = D6B743661F61F1350015074E /* Build configuration list for PBXProject "StarCardWars" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D6B743621F61F1350015074E;
+			productRefGroup = D6B7436C1F61F1350015074E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D6B7436A1F61F1350015074E /* StarCardWars */,
+				D6B7437E1F61F1350015074E /* StarCardWarsTests */,
+				D6B743891F61F1350015074E /* StarCardWarsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D6B743691F61F1350015074E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6B743791F61F1350015074E /* LaunchScreen.storyboard in Resources */,
+				D6B7439D1F6205FE0015074E /* Assets.xcassets in Resources */,
+				D6B743741F61F1350015074E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6B7437D1F61F1350015074E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6B743881F61F1350015074E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D6B743671F61F1350015074E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6B743711F61F1350015074E /* ViewController.swift in Sources */,
+				D6B7436F1F61F1350015074E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6B7437B1F61F1350015074E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6B743841F61F1350015074E /* StarCardWarsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6B743861F61F1350015074E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6B7438F1F61F1350015074E /* StarCardWarsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D6B743811F61F1350015074E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6B7436A1F61F1350015074E /* StarCardWars */;
+			targetProxy = D6B743801F61F1350015074E /* PBXContainerItemProxy */;
+		};
+		D6B7438C1F61F1350015074E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6B7436A1F61F1350015074E /* StarCardWars */;
+			targetProxy = D6B7438B1F61F1350015074E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D6B743721F61F1350015074E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6B743731F61F1350015074E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D6B743771F61F1350015074E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6B743781F61F1350015074E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D6B743911F61F1350015074E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D6B743921F61F1350015074E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D6B743941F61F1350015074E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StarCardWars/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vinvivo.StarCardWars;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D6B743951F61F1350015074E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StarCardWars/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vinvivo.StarCardWars;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D6B743971F61F1350015074E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StarCardWarsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vinvivo.StarCardWarsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarCardWars.app/StarCardWars";
+			};
+			name = Debug;
+		};
+		D6B743981F61F1350015074E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StarCardWarsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vinvivo.StarCardWarsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarCardWars.app/StarCardWars";
+			};
+			name = Release;
+		};
+		D6B7439A1F61F1350015074E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = StarCardWarsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vinvivo.StarCardWarsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = StarCardWars;
+			};
+			name = Debug;
+		};
+		D6B7439B1F61F1350015074E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = StarCardWarsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vinvivo.StarCardWarsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = StarCardWars;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D6B743661F61F1350015074E /* Build configuration list for PBXProject "StarCardWars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6B743911F61F1350015074E /* Debug */,
+				D6B743921F61F1350015074E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6B743931F61F1350015074E /* Build configuration list for PBXNativeTarget "StarCardWars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6B743941F61F1350015074E /* Debug */,
+				D6B743951F61F1350015074E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D6B743961F61F1350015074E /* Build configuration list for PBXNativeTarget "StarCardWarsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6B743971F61F1350015074E /* Debug */,
+				D6B743981F61F1350015074E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D6B743991F61F1350015074E /* Build configuration list for PBXNativeTarget "StarCardWarsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6B7439A1F61F1350015074E /* Debug */,
+				D6B7439B1F61F1350015074E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D6B743631F61F1350015074E /* Project object */;
+}
