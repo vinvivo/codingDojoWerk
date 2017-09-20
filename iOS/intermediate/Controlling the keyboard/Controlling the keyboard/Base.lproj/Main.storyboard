@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CourierNewBold.ttf">
+            <string>CourierNewPS-BoldMT</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Controlling_the_keyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HyB-Tj-ThT">
+                                <rect key="frame" x="16" y="0.0" width="635" height="22"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Zyj-BH-fxb"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="a1" translatesAutoresizingMaskIntoConstraints="NO" id="MYO-yU-Me9">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Test" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGb-wu-hkx">
+                                <rect key="frame" x="438" y="156" width="95" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="JbI-oV-vpA"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Test" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYa-Pz-Y2R">
+                                <rect key="frame" x="438" y="112" width="95" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="tTd-7e-bsL"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mYa-Pz-Y2R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="438" id="2bG-gs-pZw"/>
+                            <constraint firstItem="HyB-Tj-ThT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cal-PO-d2b"/>
+                            <constraint firstItem="MYO-yU-Me9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="DoV-6W-fEb"/>
+                            <constraint firstItem="mYa-Pz-Y2R" firstAttribute="top" secondItem="HyB-Tj-ThT" secondAttribute="bottom" constant="90" id="KqQ-TU-6sN"/>
+                            <constraint firstItem="SGb-wu-hkx" firstAttribute="top" secondItem="mYa-Pz-Y2R" secondAttribute="bottom" constant="18" id="LYK-a8-fty"/>
+                            <constraint firstItem="MYO-yU-Me9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mi8-bV-rf9"/>
+                            <constraint firstItem="HyB-Tj-ThT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QKZ-th-B7f"/>
+                            <constraint firstItem="mYa-Pz-Y2R" firstAttribute="trailing" secondItem="SGb-wu-hkx" secondAttribute="trailing" id="QoM-Kg-6gs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mYa-Pz-Y2R" secondAttribute="trailing" constant="134" id="REo-2A-Skn"/>
+                            <constraint firstItem="MYO-yU-Me9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RFo-RD-bCv"/>
+                            <constraint firstItem="mYa-Pz-Y2R" firstAttribute="leading" secondItem="SGb-wu-hkx" secondAttribute="leading" id="oFR-iq-DHE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HyB-Tj-ThT" secondAttribute="trailing" constant="16" id="pbl-Qd-Agq"/>
+                            <constraint firstItem="MYO-yU-Me9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tAc-BN-orW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.28185907046478" y="132"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="a1" width="2208" height="1242"/>
+    </resources>
+</document>
